@@ -1,10 +1,10 @@
-package com.leti2021_2.playingFieldObjects;
+package com.leti2021_2.FieldObjects;
 
-public class SeniorTester implements Tester {
-    static final String DESCRIPTION = "Senior Tester Description";
+public class SeniorProgrammer implements Programmer {
+    static final String DESCRIPTION = "Senior Programmer Description";
     private double health = 100;
-    private int stressTolerance = 4;
-    private double skillLvl = 20;
+    private int stressTolerance = 2;
+    private double skillLvl = 30;
 
     @Override
     public String getDescription() {

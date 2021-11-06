@@ -1,6 +1,6 @@
-package com.leti2021_2.playingFieldObjects;
+package com.leti2021_2.FieldObjects;
 
-public class SeniorUnitFactory implements UnitFactory {
+public class SeniorUnitAbstractFactory implements UnitAbstractFactory {
 
     @Override
     public Programmer createProgrammer() {

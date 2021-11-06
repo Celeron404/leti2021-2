@@ -1,4 +1,4 @@
-package com.leti2021_2.playingFieldObjects;
+package com.leti2021_2.FieldObjects;
 
 public class JuniorProgrammer implements Programmer {
     static final String DESCRIPTION = "Junior Programmer Description";

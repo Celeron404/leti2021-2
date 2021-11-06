@@ -1,12 +1,12 @@
 package com.leti2021_2;
 
-import com.leti2021_2.playingFieldObjects.*;
+import com.leti2021_2.FieldObjects.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        var juniorFactory = new JuniorUnitFactory();
+        var juniorFactory = new JuniorUnitAbstractFactory();
         var juniorTester = juniorFactory.createTester();
         var juniorProgrammer = juniorFactory.createProgrammer();
         var juniorSupportEngineer = juniorFactory.createSupportEngineer();
@@ -17,7 +17,7 @@ public class Main {
         System.out.println(juniorSupportEngineer.getDescription());
         System.out.println();
 
-        var seniorFactory = new SeniorUnitFactory();
+        var seniorFactory = new SeniorUnitAbstractFactory();
         var seniorTester = seniorFactory.createTester();
         var seniorProgrammer = seniorFactory.createProgrammer();
         var seniorSupportEngineer = seniorFactory.createSupportEngineer();

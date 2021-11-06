@@ -1,8 +1,8 @@
-package com.leti2021_2.playingFieldObjects;
+package com.leti2021_2.FieldObjects;
 
 import com.leti2021_2.PlayingField;
 
-public class PlayingFieldObject {
+public class FieldObject_old {
     private static int numberOfObjects = 0;
 
     public static int getNumberOfObjects() {
@@ -21,5 +21,22 @@ public class PlayingFieldObject {
             numberOfObjects--;
         else
             throw new IllegalArgumentException("Number of Objects cannot be less than 0.");
+    }
+
+    public static class FactoryMaker {
+        public enum UnitType {
+            University, NeutralObjects, Landscape
+        }
+
+        public static UnitAbstractFactory makeFactory(Unit.FactoryMaker.UnitType type) {
+            switch (type) {
+                case JUNIOR:
+                    return new University();
+                case SENIOR:
+                    return new SeniorUnitAbstractFactory();
+                default:
+                    throw new IllegalArgumentException("UnitType not supported.");
+            }
+        }
     }
 }

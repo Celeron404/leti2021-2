@@ -1,7 +1,7 @@
 package com.leti2021_2;
 
-import com.leti2021_2.playingFieldObjects.Coordinates;
-import com.leti2021_2.playingFieldObjects.PlayingFieldObject;
+import com.leti2021_2.FieldObjects.Coordinates;
+import com.leti2021_2.FieldObjects.FieldObject_old;
 
 public class PlayingField {
     private static int sideSize;
@@ -28,7 +28,7 @@ public class PlayingField {
         square = sideSize * sideSize;
     }
 
-    public static void addObject(Coordinates coordinates, PlayingFieldObject object) {
+    public static void addObject(Coordinates coordinates, FieldObject_old object) {
 
     }
 }
