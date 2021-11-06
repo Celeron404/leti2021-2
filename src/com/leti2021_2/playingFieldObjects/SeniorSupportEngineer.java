@@ -4,7 +4,7 @@ public class SeniorSupportEngineer implements SupportEngineer {
     static final String DESCRIPTION = "Senior Support Engineer Description";
     private double health = 100;
     private int stressTolerance = 6;
-    private double efficiency = 16;
+    private double skillLvl = 16;
 
     @Override
     public String getDescription() {
@@ -15,7 +15,7 @@ public class SeniorSupportEngineer implements SupportEngineer {
     @Override
     public int getStressTolerance() { return stressTolerance; }
     @Override
-    public double getEfficiency() { return efficiency; }
+    public double getSkillLvl() { return skillLvl; }
 
     @Override
     public void setHealth(double input) {
@@ -34,9 +34,9 @@ public class SeniorSupportEngineer implements SupportEngineer {
     }
 
     @Override
-    public void setEfficiency(double input) {
+    public void setSkillLvl(double input) {
         if (input >= 0)
-            efficiency = input;
+            skillLvl = input;
         else
             throw new IllegalArgumentException("Efficiency cannot be less then zero.");
     }

@@ -4,7 +4,7 @@ public class SeniorTester implements Tester {
     static final String DESCRIPTION = "Senior Tester Description";
     private double health = 100;
     private int stressTolerance = 4;
-    private double efficiency = 20;
+    private double skillLvl = 20;
 
     @Override
     public String getDescription() {
@@ -15,7 +15,7 @@ public class SeniorTester implements Tester {
     @Override
     public int getStressTolerance() { return stressTolerance; }
     @Override
-    public double getEfficiency() { return efficiency; }
+    public double getSkillLvl() { return skillLvl; }
 
     @Override
     public void setHealth(double input) {
@@ -34,9 +34,9 @@ public class SeniorTester implements Tester {
     }
 
     @Override
-    public void setEfficiency(double input) {
+    public void setSkillLvl(double input) {
         if (input >= 0)
-            efficiency = input;
+            skillLvl = input;
         else
             throw new IllegalArgumentException("Efficiency cannot be less then zero.");
     }

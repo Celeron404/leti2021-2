@@ -4,7 +4,7 @@ public class JuniorProgrammer implements Programmer {
     static final String DESCRIPTION = "Junior Programmer Description";
     private double health = 50;
     private int stressTolerance = 1;
-    private double efficiency = 15;
+    private double skillLvl = 15;
 
     @Override
     public String getDescription() {
@@ -15,7 +15,7 @@ public class JuniorProgrammer implements Programmer {
     @Override
     public int getStressTolerance() { return stressTolerance; }
     @Override
-    public double getEfficiency() { return efficiency; }
+    public double getSkillLvl() { return skillLvl; }
 
     @Override
     public void setHealth(double input) {
@@ -34,9 +34,9 @@ public class JuniorProgrammer implements Programmer {
     }
 
     @Override
-    public void setEfficiency(double input) {
+    public void setSkillLvl(double input) {
         if (input >= 0)
-            efficiency = input;
+            skillLvl = input;
         else
             throw new IllegalArgumentException("Efficiency cannot be less then zero.");
     }

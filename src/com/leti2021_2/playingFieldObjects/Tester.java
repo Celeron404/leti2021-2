@@ -2,11 +2,11 @@ package com.leti2021_2.playingFieldObjects;
 
 public interface Tester {
     String getDescription();
-    public double getHealth();
-    public int getStressTolerance();
-    public double getEfficiency();
+    double getHealth();
+    int getStressTolerance();
+    double getSkillLvl();
 
-    public void setHealth(double input);
-    public void setStressTolerance(int input);
-    public void setEfficiency(double input);
+    void setHealth(double input);
+    void setStressTolerance(int input);
+    void setSkillLvl(double input);
 }
