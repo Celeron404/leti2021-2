@@ -4,7 +4,8 @@ public class SeniorUnitFactory implements UnitFactory {
 
     @Override
     public Programmer createProgrammer() {
-        return new SeniorProgrammer();
+        var programmer = new SeniorProgrammer();
+        return programmer;
     }
 
     @Override
