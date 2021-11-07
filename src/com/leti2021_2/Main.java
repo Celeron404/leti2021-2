@@ -25,5 +25,9 @@ public class Main {
         System.out.println(seniorTester.getDescription());
         System.out.println(seniorProgrammer.getDescription());
         System.out.println(seniorSupportEngineer.getDescription());
+
+        System.out.println();
+        int objects = FieldObjectCounting.getNumberOfObjects();
+        System.out.println("objects: " + objects);
     }
 }
