@@ -1,6 +1,8 @@
 package com.leti2021_2;
 
 import com.leti2021_2.FieldObjects.*;
+import com.leti2021_2.FieldObjects.Factories.JuniorUnitAbstractFactory;
+import com.leti2021_2.FieldObjects.Factories.SeniorUnitAbstractFactory;
 
 public class Main {
 
@@ -26,8 +28,10 @@ public class Main {
         System.out.println(seniorProgrammer.getDescription());
         System.out.println(seniorSupportEngineer.getDescription());
 
+        /*
         System.out.println();
         int objects = FieldObjectCounting.getNumberOfObjects();
         System.out.println("objects: " + objects);
+        */
     }
 }

@@ -1,11 +1,10 @@
 package com.leti2021_2.FieldObjects;
 
-public class Unit implements FieldObject {
+import com.leti2021_2.FieldObjects.Factories.JuniorUnitAbstractFactory;
+import com.leti2021_2.FieldObjects.Factories.SeniorUnitAbstractFactory;
+import com.leti2021_2.FieldObjects.Factories.UnitAbstractFactory;
 
-    @Override
-    public void getDescription() {
-        System.out.println("This is Unit");
-    }
+public class Unit {
 
     public static class FactoryMaker {
         public enum UnitType {
