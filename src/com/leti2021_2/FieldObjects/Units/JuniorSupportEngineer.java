@@ -1,10 +1,13 @@
-package com.leti2021_2.FieldObjects;
+package com.leti2021_2.FieldObjects.Units;
 
-public class JuniorProgrammer implements Programmer {
-    static final String DESCRIPTION = "Junior Programmer Description";
+import com.leti2021_2.FieldObjects.FieldObject;
+import com.leti2021_2.FieldObjects.SupportEngineer;
+
+public class JuniorSupportEngineer implements SupportEngineer, FieldObject {
+    static final String DESCRIPTION = "Junior Support Engineer Description";
     private double health = 50;
-    private int stressTolerance = 1;
-    private double skillLvl = 15;
+    private int stressTolerance = 3;
+    private double skillLvl = 8;
 
     @Override
     public String getDescription() {

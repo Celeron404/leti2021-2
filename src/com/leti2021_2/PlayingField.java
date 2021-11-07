@@ -1,16 +1,20 @@
 package com.leti2021_2;
 
-import com.leti2021_2.FieldObjects.Coordinates;
 import com.leti2021_2.FieldObjects.FieldObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class PlayingField {
     private static int sideSize;
     private static int square;
+    private static Map<Coords, FieldObject> fieldObjectMap = new HashMap<>();
 
     private PlayingField() { }
     public PlayingField(int sideSize) {
         setSideSize(sideSize);
         setSquare(sideSize);
+        // ...
     }
 
     public static int getSideSize() { return sideSize; }
@@ -27,7 +31,15 @@ public class PlayingField {
         square = sideSize * sideSize;
     }
 
-    public static void addObject(Coordinates coordinates, FieldObject object) {
+    public static FieldObject getObject(Coords coords) {
+        if (coords.getX() >= 0 && coords.getY() >= 0)
+            return fieldObjectMap.get(coords);
+        else throw new IllegalArgumentException("Coordinates cannot be less than zero.");
+    }
 
+    public static void addObject(FieldObject object, Coords coords) {
+        if (coords.getX() >= 0 && coords.getY() >= 0)
+            fieldObjectMap.put(coords, object);
+        else throw new IllegalArgumentException("Coordinates cannot be less than zero.");
     }
 }
