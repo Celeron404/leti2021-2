@@ -4,6 +4,7 @@ import com.leti2021_2.FieldObjects.FieldObject;
 import com.leti2021_2.FieldObjects.SupportEngineer;
 
 import static com.diogonunes.jcolor.Ansi.colorize;
+import static com.diogonunes.jcolor.Attribute.BLACK_BACK;
 import static com.diogonunes.jcolor.Attribute.BRIGHT_BLUE_TEXT;
 
 public class JuniorSupportEngineer implements SupportEngineer, FieldObject {
@@ -49,6 +50,6 @@ public class JuniorSupportEngineer implements SupportEngineer, FieldObject {
 
     @Override
     public void display() {
-        System.out.println(colorize("s", BRIGHT_BLUE_TEXT()));
+        System.out.print(colorize("s", BRIGHT_BLUE_TEXT(), BLACK_BACK()));
     }
 }

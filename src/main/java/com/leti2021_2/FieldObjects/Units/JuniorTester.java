@@ -5,6 +5,7 @@ import com.leti2021_2.FieldObjects.Tester;
 import com.leti2021_2.FieldObjects.Unit;
 
 import static com.diogonunes.jcolor.Ansi.colorize;
+import static com.diogonunes.jcolor.Attribute.BLACK_BACK;
 import static com.diogonunes.jcolor.Attribute.BRIGHT_BLUE_TEXT;
 
 public class JuniorTester extends Unit implements Tester, FieldObject {
@@ -50,6 +51,6 @@ public class JuniorTester extends Unit implements Tester, FieldObject {
 
     @Override
     public void display() {
-        System.out.println(colorize("t", BRIGHT_BLUE_TEXT()));
+        System.out.print(colorize("t", BRIGHT_BLUE_TEXT(), BLACK_BACK()));
     }
 }

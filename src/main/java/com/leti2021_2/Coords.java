@@ -24,4 +24,9 @@ public class Coords {
         if ((input >= 0) && (input <= PlayingField.getSideSize()))
             y = input;
     }
+
+    public static boolean isEqual(Coords coordsA, Coords coordsB) {
+        return (coordsA.x == coordsB.x)
+                && (coordsA.y == coordsB.y);
+    }
 }

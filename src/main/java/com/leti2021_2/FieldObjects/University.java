@@ -1,6 +1,7 @@
 package com.leti2021_2.FieldObjects;
 
 import static com.diogonunes.jcolor.Ansi.colorize;
+import static com.diogonunes.jcolor.Attribute.BLACK_BACK;
 import static com.diogonunes.jcolor.Attribute.BRIGHT_WHITE_TEXT;
 
 public class University implements FieldObject {
@@ -11,6 +12,6 @@ public class University implements FieldObject {
 
     @Override
     public void display() {
-        System.out.println(colorize("U", BRIGHT_WHITE_TEXT()));
+        System.out.print(colorize("U", BRIGHT_WHITE_TEXT(), BLACK_BACK()));
     }
 }

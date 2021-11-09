@@ -5,7 +5,7 @@ import com.leti2021_2.FieldObjects.University;
 
 public class UniversityFactory implements FieldObjectFactory {
     @Override
-    public FieldObject addObject() {
+    public FieldObject createObject() {
         return new University();
     }
 }

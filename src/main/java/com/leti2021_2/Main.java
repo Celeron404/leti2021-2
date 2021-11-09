@@ -1,7 +1,10 @@
 package com.leti2021_2;
 
 import com.leti2021_2.FieldObjects.Factories.JuniorUnitAbstractFactory;
-import com.leti2021_2.FieldObjects.Factories.SeniorUnitAbstractFactory;
+import com.leti2021_2.FieldObjects.Factories.UniversityFactory;
+import com.leti2021_2.BorderGenerator;
+import com.leti2021_2.FieldObjects.LandscapeObjects.Border;
+import com.leti2021_2.FieldObjects.University;
 
 public class Main {
 
@@ -18,14 +21,19 @@ public class Main {
         System.out.println(juniorSupportEngineer.getDescription());
         System.out.println();
 
-        var seniorFactory = new SeniorUnitAbstractFactory();
-        var seniorTester = seniorFactory.createTester();
-        var seniorProgrammer = seniorFactory.createProgrammer();
-        var seniorSupportEngineer = seniorFactory.createSupportEngineer();
-        System.out.println("senior units:");
-        System.out.println(seniorTester.getDescription());
-        System.out.println(seniorProgrammer.getDescription());
-        System.out.println(seniorSupportEngineer.getDescription());
+        var universityFactory = new UniversityFactory();
+        var university = universityFactory.createObject();
+        System.out.println(university.getDescription());
+
+        int sidesize = 9;
+        var playingField = new PlayingField(sidesize);
+
+        var univercity = new University();
+        for (int i = 1; i < sidesize - 1; i++) {
+            PlayingField.addObject(univercity, new Coords(i, i));
+        }
+
+        PlayingField.display();
 
 
 
