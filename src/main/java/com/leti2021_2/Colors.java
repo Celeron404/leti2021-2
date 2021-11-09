@@ -11,22 +11,22 @@ public class Colors {
     public static void main(String[] args) {
         System.out.println("This text will be default color");
         System.out.println(colorize("This text will be default color"));
-        System.out.println(colorize("This text will be black", BLACK_TEXT()));
-        System.out.println(colorize("This text will be bright black", BRIGHT_BLACK_TEXT()));
-        System.out.println(colorize("This text will be blue", BLUE_TEXT()));
-        System.out.println(colorize("This text will be bright blue", BRIGHT_BLUE_TEXT()));
-        System.out.println(colorize("This text will be cyan", CYAN_TEXT()));
-        System.out.println(colorize("This text will be bright cyan", BRIGHT_CYAN_TEXT()));
-        System.out.println(colorize("This text will be green", GREEN_TEXT()));
-        System.out.println(colorize("This text will be bright green", BRIGHT_GREEN_TEXT()));
-        System.out.println(colorize("This text will be magenta", MAGENTA_TEXT()));
-        System.out.println(colorize("This text will be bright magenta", BRIGHT_MAGENTA_TEXT()));
-        System.out.println(colorize("This text will be red", RED_TEXT()));
-        System.out.println(colorize("This text will be bright red", BRIGHT_RED_TEXT()));
-        System.out.println(colorize("This text will be white", WHITE_TEXT()));
-        System.out.println(colorize("This text will be bright white", BRIGHT_WHITE_TEXT()));
-        System.out.println(colorize("This text will be yellow", YELLOW_TEXT()));
-        System.out.println(colorize("This text will be yellow black", BRIGHT_YELLOW_TEXT()));
+        System.out.println(colorize("This text will be black", BLACK_TEXT(), BLACK_BACK()));
+        System.out.println(colorize("This text will be bright black", BRIGHT_BLACK_TEXT(), BLACK_BACK()));
+        System.out.println(colorize("This text will be blue", BLUE_TEXT(), BLACK_BACK()));
+        System.out.println(colorize("This text will be bright blue", BRIGHT_BLUE_TEXT(), BLACK_BACK()));
+        System.out.println(colorize("This text will be cyan", CYAN_TEXT(), BLACK_BACK()));
+        System.out.println(colorize("This text will be bright cyan", BRIGHT_CYAN_TEXT(), BLACK_BACK()));
+        System.out.println(colorize("This text will be green", GREEN_TEXT(), BLACK_BACK()));
+        System.out.println(colorize("This text will be bright green", BRIGHT_GREEN_TEXT(), BLACK_BACK()));
+        System.out.println(colorize("This text will be magenta", MAGENTA_TEXT(), BLACK_BACK()));
+        System.out.println(colorize("This text will be bright magenta", BRIGHT_MAGENTA_TEXT(), BLACK_BACK()));
+        System.out.println(colorize("This text will be red", RED_TEXT(), BLACK_BACK()));
+        System.out.println(colorize("This text will be bright red", BRIGHT_RED_TEXT(), BLACK_BACK()));
+        System.out.println(colorize("This text will be white", WHITE_TEXT(), BLACK_BACK()));
+        System.out.println(colorize("This text will be bright white", BRIGHT_WHITE_TEXT(), BLACK_BACK()));
+        System.out.println(colorize("This text will be yellow", YELLOW_TEXT(), BLACK_BACK()));
+        System.out.println(colorize("This text will be yellow black", BRIGHT_YELLOW_TEXT(), BLACK_BACK()));
 
         /*
         System.out.println(colorize("This text will be ", ));
