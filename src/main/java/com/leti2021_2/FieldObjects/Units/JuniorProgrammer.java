@@ -3,6 +3,9 @@ package com.leti2021_2.FieldObjects.Units;
 import com.leti2021_2.FieldObjects.FieldObject;
 import com.leti2021_2.FieldObjects.Programmer;
 
+import static com.diogonunes.jcolor.Ansi.colorize;
+import static com.diogonunes.jcolor.Attribute.BRIGHT_BLUE_TEXT;
+
 public class JuniorProgrammer implements Programmer, FieldObject {
     static final String DESCRIPTION = "Junior Programmer Description";
     private double health = 50;
@@ -42,5 +45,10 @@ public class JuniorProgrammer implements Programmer, FieldObject {
             skillLvl = input;
         else
             throw new IllegalArgumentException("Efficiency cannot be less then zero.");
+    }
+
+    @Override
+    public void display() {
+        System.out.println(colorize("p", BRIGHT_BLUE_TEXT()));
     }
 }

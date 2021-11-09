@@ -4,6 +4,9 @@ import com.leti2021_2.FieldObjects.FieldObject;
 import com.leti2021_2.FieldObjects.Tester;
 import com.leti2021_2.FieldObjects.Unit;
 
+import static com.diogonunes.jcolor.Ansi.colorize;
+import static com.diogonunes.jcolor.Attribute.BRIGHT_BLUE_TEXT;
+
 public class JuniorTester extends Unit implements Tester, FieldObject {
     static final String DESCRIPTION = "Junior Tester Description";
     private double health = 50;
@@ -43,5 +46,10 @@ public class JuniorTester extends Unit implements Tester, FieldObject {
             skillLvl = input;
         else
             throw new IllegalArgumentException("Efficiency cannot be less then zero.");
+    }
+
+    @Override
+    public void display() {
+        System.out.println(colorize("t", BRIGHT_BLUE_TEXT()));
     }
 }
