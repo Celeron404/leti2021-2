@@ -1,8 +1,10 @@
 package com.leti2021_2;
 
-import com.leti2021_2.FieldObjects.*;
 import com.leti2021_2.FieldObjects.Factories.JuniorUnitAbstractFactory;
 import com.leti2021_2.FieldObjects.Factories.SeniorUnitAbstractFactory;
+
+import static com.diogonunes.jcolor.Ansi.colorize;
+import static com.diogonunes.jcolor.Attribute.YELLOW_TEXT;
 
 public class Main {
 
@@ -28,6 +30,7 @@ public class Main {
         System.out.println(seniorProgrammer.getDescription());
         System.out.println(seniorSupportEngineer.getDescription());
 
+        System.out.println(colorize("This text will be yellow", YELLOW_TEXT()));
         /*
         System.out.println();
         int objects = FieldObjectCounting.getNumberOfObjects();
