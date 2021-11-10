@@ -1,6 +1,6 @@
 package com.leti2021_2;
 
-import com.leti2021_2.FieldObjects.LandscapeObjects.Wall;
+import com.leti2021_2.FieldObjects.LandscapeObjects.Impassable.Wall;
 
 public class WallGenerator implements ObjectsGenerator { //generates a border
     @Override

@@ -1,12 +1,12 @@
-package com.leti2021_2.FieldObjects.LandscapeObjects;
+package com.leti2021_2.FieldObjects.LandscapeObjects.Impassable;
 
-import com.leti2021_2.FieldObjects.Landscape;
+import com.leti2021_2.FieldObjects.LandscapeObjects.ImpassableLandscapeObject;
 
 import static com.diogonunes.jcolor.Ansi.colorize;
 import static com.diogonunes.jcolor.Attribute.*;
 
-public class Wall implements Landscape {
-    static final String DESCRIPTION = "You shall not pass!!!";
+public class Wall implements ImpassableLandscapeObject {
+    static final String DESCRIPTION = "The wall. You shall not pass!!!";
 
     @Override
     public String getDescription() { return DESCRIPTION; }
