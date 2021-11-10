@@ -23,12 +23,12 @@ public class Main {
         var university = universityFactory.createObject();
         System.out.println(university.getDescription());
 
-        int sidesize = 9;
+        int sidesize = 15;
         var playingField = new PlayingField(sidesize);
 
         var univercity = new University();
         for (int i = 1; i < sidesize - 1; i++) {
-            PlayingField.addObject(univercity, new Coords(i, i));
+            PlayingField.addObject(new Coords(i, i), univercity);
         }
 
         PlayingField.display();

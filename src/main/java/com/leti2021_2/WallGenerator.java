@@ -10,16 +10,16 @@ public class WallGenerator implements ObjectsGenerator { //generates a border
 
         for (int i = 0; i < sideSize; i++) {
             Coords coords = new Coords(0, i);
-            PlayingField.addObject(new Wall(), coords);
+            PlayingField.addObject(coords, new Wall());
             Coords coords1 = new Coords(sideSize - 1, i);
-            PlayingField.addObject(new Wall(), coords1);
+            PlayingField.addObject(coords1, new Wall());
         }
 
         for (int i = 1; i < sideSize - 1; i++) {
             Coords coords = new Coords(i, 0);
-            PlayingField.addObject(new Wall(), coords);
+            PlayingField.addObject(coords, new Wall());
             Coords coords1 = new Coords(i, sideSize - 1);
-            PlayingField.addObject(new Wall(), coords1);
+            PlayingField.addObject(coords1, new Wall());
         }
     }
 }
