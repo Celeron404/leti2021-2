@@ -5,7 +5,7 @@ import com.leti2021_2.FieldObjects.Landscape;
 import static com.diogonunes.jcolor.Ansi.colorize;
 import static com.diogonunes.jcolor.Attribute.*;
 
-public class Border implements Landscape {
+public class Wall implements Landscape {
     static final String DESCRIPTION = "You shall not pass!!!";
 
     @Override

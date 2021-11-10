@@ -20,8 +20,8 @@ public class PlayingField {
         if (!isFieldExixts) {
             setSideSize(sideSize);
             setSquare(sideSize);
-            var borderGenerator = new BorderGenerator();
-            borderGenerator.generateFieldObjects(0);
+            var wallGenerator = new WallGenerator();
+            wallGenerator.generateFieldObjects(0);
             isFieldExixts = true;
         }
         else
@@ -50,7 +50,6 @@ public class PlayingField {
                     return entry.getValue();
             }
         }
-            //return fieldObjectMap.get(coords);
         else throw new IllegalArgumentException("Coordinates cannot be less than zero.");
 
         return null;

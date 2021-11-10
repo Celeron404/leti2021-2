@@ -2,8 +2,6 @@ package com.leti2021_2;
 
 import com.leti2021_2.FieldObjects.Factories.JuniorUnitAbstractFactory;
 import com.leti2021_2.FieldObjects.Factories.UniversityFactory;
-import com.leti2021_2.BorderGenerator;
-import com.leti2021_2.FieldObjects.LandscapeObjects.Border;
 import com.leti2021_2.FieldObjects.University;
 
 public class Main {
