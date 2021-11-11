@@ -9,7 +9,7 @@ import static com.diogonunes.jcolor.Ansi.colorize;
 import static com.diogonunes.jcolor.Attribute.BLACK_BACK;
 import static com.diogonunes.jcolor.Attribute.BLACK_TEXT;
 
-public class PlayingField {
+public class PlayingField implements Displayable {
     private static final int MAX_SIDE_SIZE = 40;
     private static int sideSize;
     private static int square;
@@ -43,7 +43,7 @@ public class PlayingField {
         square = sideSize * sideSize;
     }
 
-    public static FieldObject getObject(Coords coords) {
+    public FieldObject getObject(Coords coords) {
         for (Map.Entry<Coords, FieldObject> entry : fieldObjectMap.entrySet()) {
             if (Coords.isEqual(entry.getKey(), coords))
                 return entry.getValue();
@@ -58,25 +58,4 @@ public class PlayingField {
         }
         fieldObjectMap.put(coords, object);
     }
-
-    public static void display() {
-        for (int x = sideSize - 1; x >= 0; x--) {
-            for (int y = 0; y < sideSize; y++) {
-                System.out.print(colorize(" ", BLACK_TEXT(), BLACK_BACK()));
-
-                Coords coords = new Coords(x, y);
-                FieldObject currentObject = getObject(coords);
-                if (currentObject != null) {
-                    currentObject.display();
-                }
-                else System.out.print(colorize(" ", BLACK_TEXT(), BLACK_BACK()));
-
-                System.out.print(colorize(" ", BLACK_TEXT(), BLACK_BACK()));
-            }
-            System.out.println();
-        }
-        System.out.println();
-    }
-
-
 }

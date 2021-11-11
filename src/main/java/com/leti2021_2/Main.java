@@ -31,9 +31,7 @@ public class Main {
             PlayingField.addObject(new Coords(i, i), univercity);
         }
 
-        PlayingField.display();
-
-
+        Display.display(playingField);
 
         /*
         System.out.println();
