@@ -1,8 +1,8 @@
 package com.leti2021_2.FieldObjects.Factories;
 
-import com.leti2021_2.FieldObjects.Programmer;
-import com.leti2021_2.FieldObjects.SupportEngineer;
-import com.leti2021_2.FieldObjects.Tester;
+import com.leti2021_2.FieldObjects.Units.Programmer;
+import com.leti2021_2.FieldObjects.Units.SupportEngineer;
+import com.leti2021_2.FieldObjects.Units.Tester;
 
 public interface UnitAbstractFactory {
     Programmer createProgrammer();

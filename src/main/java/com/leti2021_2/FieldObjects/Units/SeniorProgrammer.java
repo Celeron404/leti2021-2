@@ -1,13 +1,12 @@
 package com.leti2021_2.FieldObjects.Units;
 
 import com.leti2021_2.FieldObjects.FieldObject;
-import com.leti2021_2.FieldObjects.Programmer;
 
 import static com.diogonunes.jcolor.Ansi.colorize;
 import static com.diogonunes.jcolor.Attribute.BLACK_BACK;
 import static com.diogonunes.jcolor.Attribute.BRIGHT_BLUE_TEXT;
 
-public class SeniorProgrammer implements Programmer, FieldObject {
+public class SeniorProgrammer implements Programmer {
     static final String DESCRIPTION = "Senior Programmer Description";
     private double health = 100;
     private int stressTolerance = 2;

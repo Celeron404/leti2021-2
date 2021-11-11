@@ -1,9 +1,6 @@
 package com.leti2021_2.FieldObjects.Factories;
 
-import com.leti2021_2.FieldObjects.*;
-import com.leti2021_2.FieldObjects.Units.SeniorProgrammer;
-import com.leti2021_2.FieldObjects.Units.SeniorSupportEngineer;
-import com.leti2021_2.FieldObjects.Units.SeniorTester;
+import com.leti2021_2.FieldObjects.Units.*;
 
 public class SeniorUnitAbstractFactory implements UnitAbstractFactory {
 

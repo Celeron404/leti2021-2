@@ -1,7 +1,6 @@
-package com.leti2021_2.FieldObjects;
+package com.leti2021_2.FieldObjects.Units;
 
-public interface SupportEngineer {
-    String getDescription();
+public interface Programmer extends Unit {
     double getHealth();
     int getStressTolerance();
     double getSkillLvl();

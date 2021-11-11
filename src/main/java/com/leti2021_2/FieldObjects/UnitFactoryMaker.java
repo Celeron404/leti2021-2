@@ -4,7 +4,7 @@ import com.leti2021_2.FieldObjects.Factories.JuniorUnitAbstractFactory;
 import com.leti2021_2.FieldObjects.Factories.SeniorUnitAbstractFactory;
 import com.leti2021_2.FieldObjects.Factories.UnitAbstractFactory;
 
-public class Unit {
+public class UnitFactoryMaker {
 
     public static class FactoryMaker {
         public enum UnitType {

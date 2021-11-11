@@ -1,6 +1,6 @@
-package com.leti2021_2.FieldObjects;
+package com.leti2021_2.FieldObjects.Units;
 
-public interface Programmer {
+public interface Tester extends Unit {
     String getDescription();
     double getHealth();
     int getStressTolerance();
