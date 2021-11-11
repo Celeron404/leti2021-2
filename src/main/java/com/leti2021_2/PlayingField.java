@@ -44,27 +44,19 @@ public class PlayingField {
     }
 
     public static FieldObject getObject(Coords coords) {
-        if (coords.getX() >= 0 && coords.getY() >= 0) {
-
-            for (Map.Entry<Coords, FieldObject> entry : fieldObjectMap.entrySet()) {
-                if (Coords.isEqual(entry.getKey(), coords))
-                    return entry.getValue();
-            }
+        for (Map.Entry<Coords, FieldObject> entry : fieldObjectMap.entrySet()) {
+            if (Coords.isEqual(entry.getKey(), coords))
+                return entry.getValue();
         }
-        else throw new IllegalArgumentException("Coordinates cannot be less than zero.");
-
         return null;
     }
 
     public static void addObject(Coords coords, FieldObject object) {
-        if (coords.getX() >= 0 && coords.getY() >= 0) {
-            for (Map.Entry<Coords, FieldObject> entry : fieldObjectMap.entrySet()) {
-                if (Coords.isEqual(entry.getKey(), coords))
-                    throw new IllegalArgumentException("These coordinates are occupied by another object.");
-            }
-            fieldObjectMap.put(coords, object);
+        for (Map.Entry<Coords, FieldObject> entry : fieldObjectMap.entrySet()) {
+            if (Coords.isEqual(entry.getKey(), coords))
+                throw new IllegalArgumentException("These coordinates are occupied by another object.");
         }
-        else throw new IllegalArgumentException("Coordinates cannot be less than zero.");
+        fieldObjectMap.put(coords, object);
     }
 
     public static void display() {
@@ -85,4 +77,6 @@ public class PlayingField {
         }
         System.out.println();
     }
+
+
 }
