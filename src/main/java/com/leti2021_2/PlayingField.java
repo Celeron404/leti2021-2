@@ -6,24 +6,22 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static com.diogonunes.jcolor.Ansi.colorize;
-import static com.diogonunes.jcolor.Attribute.BLACK_BACK;
-import static com.diogonunes.jcolor.Attribute.BLACK_TEXT;
 
 public class PlayingField implements Displayable {
     private static final int MAX_SIDE_SIZE = 40;
     private static int sideSize;
     private static int square;
     private static Map<Coords, FieldObject> fieldObjectMap = new HashMap<>();
-    private static boolean isFieldExixts = false;
+    private static boolean isFieldExists = false;
 
     private PlayingField() { }
     public PlayingField(int sideSize) {
-        if (!isFieldExixts) {
+        if (!isFieldExists) {
             setSideSize(sideSize);
             setSquare(sideSize);
             var wallGenerator = new WallGenerator();
             wallGenerator.generateFieldObjects(0);
-            isFieldExixts = true;
+            isFieldExists = true;
         }
         else
             throw new IllegalArgumentException("There can be only one Playing Field.");

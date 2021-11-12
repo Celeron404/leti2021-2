@@ -1,3 +1,4 @@
+/*
 package com.leti2021_2.FieldObjects;
 
 import com.leti2021_2.Coords;
@@ -12,6 +13,7 @@ public class FieldObjectMap<K,V> extends HashMap<K,V> {
     public V put(K key, V value) {
         return super.put(K key, V value);
     }
+
     public static void addObject(Coords coords, FieldObject object) {
         for (Map.Entry<Coords, FieldObject> entry : fieldObjectMap.entrySet()) {
             if (Coords.isEqual(entry.getKey(), coords))
@@ -29,3 +31,4 @@ public class FieldObjectMap<K,V> extends HashMap<K,V> {
         return null;
     }
 }
+*/

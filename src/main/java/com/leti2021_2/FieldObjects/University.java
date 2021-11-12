@@ -13,12 +13,15 @@ import static com.diogonunes.jcolor.Attribute.BRIGHT_WHITE_TEXT;
 
 public class University implements FieldObject, Displayable {
     static final String DESCRIPTION = "This is university. We make more workers!";
-    private static Map<Coords, FieldObject> unitsMap = new HashMap<>();
-
-    private Unit[] units;
+    private Map<Coords, FieldObject> unitsMap = new HashMap<>();
 
     @Override
     public String getDescription() { return DESCRIPTION; }
+
+    @Override
+    public void display() {
+        System.out.print(colorize("U", BRIGHT_WHITE_TEXT(), BLACK_BACK()));
+    }
 
     public FieldObject getObject(Coords coords) {
         for (Map.Entry<Coords, FieldObject> entry : unitsMap.entrySet()) {
@@ -28,8 +31,16 @@ public class University implements FieldObject, Displayable {
         return null;
     }
 
-    @Override
-    public void display() {
-        System.out.print(colorize("U", BRIGHT_WHITE_TEXT(), BLACK_BACK()));
+    public void addObject(Coords coords, FieldObject object) {
+        for (Map.Entry<Coords, FieldObject> entry : unitsMap.entrySet()) {
+            if (Coords.isEqual(entry.getKey(), coords))
+                throw new IllegalArgumentException("These coordinates are occupied by another object.");
+        }
+        unitsMap.put(coords, object);
+    }
+
+    public void moveObject(Coords objectCoords, Direction direction, int numberOfSteps) {
+        FieldObject object = getObject(objectCoords);
+
     }
 }
