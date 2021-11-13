@@ -11,8 +11,8 @@ public class PlayingField implements Displayable {
     private static final int MAX_SIDE_SIZE = 40;
     private static int sideSize;
     private static int square;
-    private static Map<Coords, FieldObject> fieldObjectMap = new HashMap<>();
     private static boolean isFieldExists = false;
+    private static Map<Coords, FieldObject> LandscapeObjectsMap = new HashMap<>();
 
     private PlayingField() { }
     public PlayingField(int sideSize) {
@@ -42,7 +42,7 @@ public class PlayingField implements Displayable {
     }
 
     public FieldObject getObject(Coords coords) {
-        for (Map.Entry<Coords, FieldObject> entry : fieldObjectMap.entrySet()) {
+        for (Map.Entry<Coords, FieldObject> entry : LandscapeObjectsMap.entrySet()) {
             if (Coords.isEqual(entry.getKey(), coords))
                 return entry.getValue();
         }
@@ -50,10 +50,10 @@ public class PlayingField implements Displayable {
     }
 
     public static void addObject(Coords coords, FieldObject object) {
-        for (Map.Entry<Coords, FieldObject> entry : fieldObjectMap.entrySet()) {
+        for (Map.Entry<Coords, FieldObject> entry : LandscapeObjectsMap.entrySet()) {
             if (Coords.isEqual(entry.getKey(), coords))
                 throw new IllegalArgumentException("These coordinates are occupied by another object.");
         }
-        fieldObjectMap.put(coords, object);
+        LandscapeObjectsMap.put(coords, object);
     }
 }
