@@ -27,7 +27,6 @@ public class Colors {
         System.out.println(colorize("This text will be bright white", BRIGHT_WHITE_TEXT(), BLACK_BACK()));
         System.out.println(colorize("This text will be yellow", YELLOW_TEXT(), BLACK_BACK()));
         System.out.println(colorize("This text will be yellow black", BRIGHT_YELLOW_TEXT(), BLACK_BACK()));
-
         /*
         System.out.println(colorize("This text will be ", ));
         System.out.println(colorize("This text will be bright ", BRIGHT_));
