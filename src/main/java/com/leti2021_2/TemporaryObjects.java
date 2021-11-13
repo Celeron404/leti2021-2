@@ -8,7 +8,7 @@ import java.util.Map;
 public class TemporaryObjects {
     private static Map<Coords, FieldObject> TemporaryObjectsMap = new HashMap<>();
 
-    public FieldObject getObject(Coords coords) {
+    public static FieldObject getObject(Coords coords) {
         for (Map.Entry<Coords, FieldObject> entry : TemporaryObjectsMap.entrySet()) {
             if (Coords.isEqual(entry.getKey(), coords))
                 return entry.getValue();

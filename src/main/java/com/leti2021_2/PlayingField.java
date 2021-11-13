@@ -7,7 +7,7 @@ import java.util.Map;
 
 import static com.diogonunes.jcolor.Ansi.colorize;
 
-public class PlayingField implements Displayable {
+public class PlayingField {
     private static final int MAX_SIDE_SIZE = 40;
     private static int sideSize;
     private static int square;
@@ -41,7 +41,7 @@ public class PlayingField implements Displayable {
         square = sideSize * sideSize;
     }
 
-    public FieldObject getObject(Coords coords) {
+    public static FieldObject getObject(Coords coords) {
         for (Map.Entry<Coords, FieldObject> entry : LandscapeObjectsMap.entrySet()) {
             if (Coords.isEqual(entry.getKey(), coords))
                 return entry.getValue();

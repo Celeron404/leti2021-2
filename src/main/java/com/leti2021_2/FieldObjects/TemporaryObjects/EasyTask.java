@@ -17,6 +17,6 @@ public class EasyTask implements TemporaryObject {
 
     @Override
     public void display() {
-        System.out.println(colorize("B", BLACK_TEXT(), CYAN_BACK()));
+        System.out.print(colorize("t", BLACK_TEXT(), CYAN_BACK()));
     }
 }

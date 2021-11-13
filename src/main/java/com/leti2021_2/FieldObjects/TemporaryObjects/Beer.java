@@ -15,6 +15,6 @@ public class Beer implements TemporaryObject {
 
     @Override
     public void display() {
-        System.out.println(colorize("t", BLACK_TEXT(), CYAN_BACK()));
+        System.out.print(colorize("B", BLACK_TEXT(), CYAN_BACK()));
     }
 }

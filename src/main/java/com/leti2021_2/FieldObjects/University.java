@@ -11,7 +11,7 @@ import static com.diogonunes.jcolor.Ansi.colorize;
 import static com.diogonunes.jcolor.Attribute.BLACK_BACK;
 import static com.diogonunes.jcolor.Attribute.BRIGHT_WHITE_TEXT;
 
-public class University implements FieldObject, Displayable {
+public class University implements FieldObject {
     static final String DESCRIPTION = "This is university. We make more workers!";
     private Map<Coords, FieldObject> unitsMap = new HashMap<>();
 
@@ -41,6 +41,8 @@ public class University implements FieldObject, Displayable {
 
     public void moveObject(Coords objectCoords, Direction direction, int numberOfSteps) {
         FieldObject object = getObject(objectCoords);
-
+        // проверить все Map
+        // передвинуть в нужном направлении
+        // отрисовать c учётом всех Map
     }
 }

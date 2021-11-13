@@ -17,6 +17,6 @@ public class HardTask implements TemporaryObject {
 
     @Override
     public void display() {
-        System.out.println(colorize("B", BLACK_TEXT(), CYAN_BACK()));
+        System.out.print(colorize("T", BLACK_TEXT(), CYAN_BACK()));
     }
 }
