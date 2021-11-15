@@ -20,5 +20,5 @@ public class Junk extends PassableLandscapeObject {
     @Override
     public String getDescription() { return DESCRIPTION; }
 
-    public static int getPassability() { return PASSABILITY; }
+    public int getPassability() { return PASSABILITY; }
 }

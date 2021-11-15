@@ -12,11 +12,11 @@ public class Floor extends PassableLandscapeObject {
 
     @Override
     public void display() {
-        System.out.print(colorize("@", BRIGHT_BLACK_TEXT(), BLACK_BACK()));
+        System.out.print(colorize(" ", BRIGHT_BLACK_TEXT(), BLACK_BACK()));
     }
 
     @Override
     public String getDescription() { return DESCRIPTION; }
 
-    public static int getPassability() { return PASSABILITY; }
+    public int getPassability() { return PASSABILITY; }
 }
