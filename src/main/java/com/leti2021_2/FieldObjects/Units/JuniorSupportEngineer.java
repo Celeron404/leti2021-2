@@ -6,7 +6,7 @@ import static com.diogonunes.jcolor.Ansi.colorize;
 import static com.diogonunes.jcolor.Attribute.BLACK_BACK;
 import static com.diogonunes.jcolor.Attribute.BRIGHT_BLUE_TEXT;
 
-public class JuniorSupportEngineer implements SupportEngineer {
+public class JuniorSupportEngineer extends SupportEngineer {
     static final String DESCRIPTION = "Junior Support Engineer Description";
     private double health = 50;
     private int stressTolerance = 3;

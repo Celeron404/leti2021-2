@@ -6,7 +6,7 @@ import static com.diogonunes.jcolor.Ansi.colorize;
 import static com.diogonunes.jcolor.Attribute.BLACK_BACK;
 import static com.diogonunes.jcolor.Attribute.BRIGHT_BLUE_TEXT;
 
-public class SeniorTester implements Tester {
+public class SeniorTester extends Tester {
     static final String DESCRIPTION = "Senior Tester Description";
     private double health = 100;
     private int stressTolerance = 4;

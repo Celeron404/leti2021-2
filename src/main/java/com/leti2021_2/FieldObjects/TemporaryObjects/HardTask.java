@@ -6,7 +6,7 @@ import static com.diogonunes.jcolor.Ansi.colorize;
 import static com.diogonunes.jcolor.Attribute.BLACK_TEXT;
 import static com.diogonunes.jcolor.Attribute.CYAN_BACK;
 
-public class HardTask implements TemporaryObject {
+public class HardTask extends TemporaryObject {
 
     private final String description = "You are faced with a daunting task. It took a lot of effort to complete it!";
 

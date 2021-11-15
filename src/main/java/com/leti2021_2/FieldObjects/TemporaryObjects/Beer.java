@@ -6,7 +6,7 @@ import static com.diogonunes.jcolor.Ansi.colorize;
 import static com.diogonunes.jcolor.Attribute.BLACK_TEXT;
 import static com.diogonunes.jcolor.Attribute.CYAN_BACK;
 
-public class Beer implements TemporaryObject {
+public class Beer extends TemporaryObject {
 
     @Override
     public String getDescription() {

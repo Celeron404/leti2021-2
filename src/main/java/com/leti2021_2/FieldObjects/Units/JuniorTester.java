@@ -7,7 +7,7 @@ import static com.diogonunes.jcolor.Ansi.colorize;
 import static com.diogonunes.jcolor.Attribute.BLACK_BACK;
 import static com.diogonunes.jcolor.Attribute.BRIGHT_BLUE_TEXT;
 
-public class JuniorTester extends UnitFactoryMaker implements Tester {
+public class JuniorTester extends Tester {
     static final String DESCRIPTION = "Junior Tester Description";
     private double health = 50;
     private int stressTolerance = 2;

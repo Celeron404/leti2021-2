@@ -5,7 +5,7 @@ import com.leti2021_2.FieldObjects.LandscapeObjects.ImpassableLandscapeObject;
 import static com.diogonunes.jcolor.Ansi.colorize;
 import static com.diogonunes.jcolor.Attribute.*;
 
-public class Wall implements ImpassableLandscapeObject {
+public class Wall extends ImpassableLandscapeObject {
     static final String DESCRIPTION = "The wall. You shall not pass!!!";
 
     @Override

@@ -1,3 +1,4 @@
+/*
 package com.leti2021_2.FieldObjects;
 
 import com.leti2021_2.PlayingField;
@@ -23,3 +24,4 @@ public class FieldObjectCounting {
             throw new IllegalArgumentException("Number of Objects cannot be less than 0.");
     }
 }
+*/

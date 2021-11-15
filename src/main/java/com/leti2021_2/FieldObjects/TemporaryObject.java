@@ -1,3 +1,5 @@
 package com.leti2021_2.FieldObjects;
 
-public interface TemporaryObject extends FieldObject { }
+public abstract class TemporaryObject implements FieldObject {
+    public boolean isPassable() { return true; }
+}

@@ -6,7 +6,7 @@ import static com.diogonunes.jcolor.Ansi.colorize;
 import static com.diogonunes.jcolor.Attribute.BLACK_BACK;
 import static com.diogonunes.jcolor.Attribute.BRIGHT_BLACK_TEXT;
 
-public class Floor implements PassableLandscapeObject {
+public class Floor extends PassableLandscapeObject {
     static final String DESCRIPTION = "A simple floor. What does to say anymore?";
     static final int PASSABILITY = 1;
 
@@ -15,13 +15,8 @@ public class Floor implements PassableLandscapeObject {
         System.out.print(colorize("@", BRIGHT_BLACK_TEXT(), BLACK_BACK()));
     }
 
-
-
     @Override
     public String getDescription() { return DESCRIPTION; }
 
-    @Override
-    public int getPassability() {
-        return PASSABILITY;
-    }
+    public static int getPassability() { return PASSABILITY; }
 }

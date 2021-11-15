@@ -6,7 +6,7 @@ import static com.diogonunes.jcolor.Ansi.colorize;
 import static com.diogonunes.jcolor.Attribute.BLACK_BACK;
 import static com.diogonunes.jcolor.Attribute.WHITE_TEXT;
 
-public class Junk implements PassableLandscapeObject {
+public class Junk extends PassableLandscapeObject {
     static final String DESCRIPTION = "A huge pile of rubbish. It's looks very difficult to getting over.";
     static final int PASSABILITY = 3;
 
@@ -20,8 +20,5 @@ public class Junk implements PassableLandscapeObject {
     @Override
     public String getDescription() { return DESCRIPTION; }
 
-    @Override
-    public int getPassability() {
-        return PASSABILITY;
-    }
+    public static int getPassability() { return PASSABILITY; }
 }
