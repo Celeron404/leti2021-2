@@ -4,6 +4,7 @@ import com.leti2021_2.FieldObjects.*;
 import com.leti2021_2.FieldObjects.Factories.JuniorUnitAbstractFactory;
 import com.leti2021_2.FieldObjects.Factories.UniversityFactory;
 import com.leti2021_2.FieldObjects.LandscapeObjects.Passable.Floor;
+import com.leti2021_2.FieldObjects.LandscapeObjects.Passable.Junk;
 import com.leti2021_2.FieldObjects.TemporaryObjects.Beer;
 import com.leti2021_2.FieldObjects.TemporaryObjects.EasyTask;
 import com.leti2021_2.FieldObjects.TemporaryObjects.HardTask;
@@ -17,7 +18,7 @@ import static com.diogonunes.jcolor.Attribute.*;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) {
 
         var juniorFactory = new JuniorUnitAbstractFactory();
         var juniorTester = juniorFactory.createTester();
@@ -52,21 +53,28 @@ public class Main {
 
         Display.display();
 
-        PlayingField.addObject(new Coords(1, 12), new Floor());
-        PlayingField.addObject(new Coords(2, 12), new Floor());
-        PlayingField.addObject(new Coords(3, 12), new Floor());
-        PlayingField.addObject(new Coords(4, 12), new Floor());
-        PlayingField.addObject(new Coords(5, 12), new Floor());
-        PlayingField.addObject(new Coords(6, 12), new Floor());
+        PlayingField.addObject(new Coords(1, 13), new Floor());
+        PlayingField.addObject(new Coords(2, 13), new Floor());
+        PlayingField.addObject(new Coords(3, 13), new Junk());
+        PlayingField.addObject(new Coords(4, 13), new Junk());
+        PlayingField.addObject(new Coords(5, 13), new Junk());
+        PlayingField.addObject(new Coords(6, 13), new Floor());
+        PlayingField.addObject(new Coords(7, 13), new Floor());
+        PlayingField.addObject(new Coords(8, 13), new Floor());
+        PlayingField.addObject(new Coords(9, 13), new Floor());
+        PlayingField.addObject(new Coords(10, 13), new Floor());
+        PlayingField.addObject(new Coords(11, 13), new Floor());
+        PlayingField.addObject(new Coords(12, 13), new Floor());
+        //PlayingField.addObject(new Coords(13, 13), new Floor());
 
         var jun = new JuniorProgrammer();
-        var coords = new Coords(1, 12);
+        var coords = new Coords(1, 13);
         university.addObject(coords, jun);
 
         Display.display();
 
         var mover = new UnitMover();
-        mover.move(jun, coords, Direction.RIGHT, 5);
+        mover.move(jun, coords, Direction.RIGHT, 13);
 
         //System.out.println(colorize("Temporary object - beer: ", BRIGHT_BLACK_TEXT(), BLACK_BACK()) + colorize("B", BLACK_TEXT(), CYAN_BACK()));
 

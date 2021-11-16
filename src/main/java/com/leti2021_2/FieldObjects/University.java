@@ -41,7 +41,7 @@ public class University implements FieldObject {
     public void addObject(Coords coords, Unit unit) {
         for (Map.Entry<Coords, Unit> entry : unitsMap.entrySet()) {
             if (Coords.isEqual(entry.getKey(), coords))
-                throw new IllegalArgumentException("These coordinates are occupied by another object.");
+                throw new IllegalArgumentException(coords.getX() + " " + coords.getX() + " : these coordinates are occupied by another object.");
         }
         unitsMap.put(coords, unit);
     }

@@ -52,7 +52,7 @@ public class PlayingField {
     public static void addObject(Coords coords, FieldObject object) {
         for (Map.Entry<Coords, FieldObject> entry : LandscapeObjectsMap.entrySet()) {
             if (Coords.isEqual(entry.getKey(), coords))
-                throw new IllegalArgumentException("These coordinates are occupied by another object.");
+                throw new IllegalArgumentException(coords.getX() + " " + coords.getX() + " : these coordinates are occupied by another object.");
         }
         LandscapeObjectsMap.put(coords, object);
     }

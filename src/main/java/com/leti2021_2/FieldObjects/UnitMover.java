@@ -15,27 +15,22 @@ public class UnitMover {
         Coords directionCoords = stepCoords(unitCoords, direction);
 
         for (int i = 0; i < numberOfSteps; i++) {
+            boolean isStepComplete;
             var stepper = new DoStepperWithPossibilityChecking();
-            stepper.doStep(unit, unitCoords, direction);
+            isStepComplete = stepper.doStep(unit, unitCoords, direction);
+            if (!isStepComplete)
+                break;
         }
-
-        // учесть модификаторы движения от ландшафта
-
-        // передвинуть в нужном направлении
-
-        // отрисовать c учётом всех Map
-
-
     }
 
     // proxy
     interface DoStep {
-        void doStep(Unit unit, Coords unitCoords, Direction direction);
+        boolean doStep(Unit unit, Coords unitCoords, Direction direction);
     }
 
     class DoStepper implements DoStep {
         @Override
-        public void doStep(Unit unit, Coords unitCoords, Direction direction) {
+        public boolean doStep(Unit unit, Coords unitCoords, Direction direction) {
             Coords targetCoords = stepCoords(unitCoords, direction);
 
             unitCoords.setX(targetCoords.getX());
@@ -47,12 +42,13 @@ public class UnitMover {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            return true;
         }
     }
 
     class DoStepperWithPossibilityChecking implements DoStep {
         @Override
-        public void doStep(Unit unit, Coords unitCoords, Direction direction) {
+        public boolean doStep(Unit unit, Coords unitCoords, Direction direction) {
             Coords targetCoords = stepCoords(unitCoords, direction);
 
             // debugging
@@ -69,9 +65,11 @@ public class UnitMover {
                 }
 
                 var doStepper = new DoStepper();
-                doStepper.doStep(unit, unitCoords, direction);
-            } else
+                return doStepper.doStep(unit, unitCoords, direction);
+            } else {
                 System.out.println(PlayingField.getObject(targetCoords).getDescription());
+                return false;
+            }
         }
     }
 

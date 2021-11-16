@@ -19,7 +19,7 @@ public class TemporaryObjects {
     public static void addObject(Coords coords, FieldObject object) {
         for (Map.Entry<Coords, FieldObject> entry : TemporaryObjectsMap.entrySet()) {
             if (Coords.isEqual(entry.getKey(), coords))
-                throw new IllegalArgumentException("These coordinates are occupied by another object.");
+                throw new IllegalArgumentException(coords.getX() + " " + coords.getX() + " : these coordinates are occupied by another object.");
         }
         TemporaryObjectsMap.put(coords, object);
     }
