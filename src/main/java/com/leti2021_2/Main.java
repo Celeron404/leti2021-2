@@ -17,6 +17,7 @@ import static com.diogonunes.jcolor.Ansi.colorize;
 import static com.diogonunes.jcolor.Attribute.*;
 
 public class Main {
+    public static boolean DEBUG = true;
 
     public static void main(String[] args) {
 
@@ -41,7 +42,7 @@ public class Main {
 
         var university = new University();
         UniversitiesMap.universities.add(university);
-        for (int i = 1; i < sideSize - 1; i++) {
+        for (int i = 1; i < sideSize - 2; i++) {
             PlayingField.addObject(new Coords(i, i), university);
         }
 
@@ -65,7 +66,33 @@ public class Main {
         PlayingField.addObject(new Coords(10, 13), new Floor());
         PlayingField.addObject(new Coords(11, 13), new Floor());
         PlayingField.addObject(new Coords(12, 13), new Floor());
-        //PlayingField.addObject(new Coords(13, 13), new Floor());
+        PlayingField.addObject(new Coords(13, 13), new Floor());
+        PlayingField.addObject(new Coords(1, 12), new Floor());
+        PlayingField.addObject(new Coords(2, 12), new Floor());
+        PlayingField.addObject(new Coords(3, 12), new Junk());
+        PlayingField.addObject(new Coords(4, 12), new Junk());
+        PlayingField.addObject(new Coords(5, 12), new Junk());
+        PlayingField.addObject(new Coords(6, 12), new Floor());
+        PlayingField.addObject(new Coords(7, 12), new Floor());
+        PlayingField.addObject(new Coords(8, 12), new Floor());
+        PlayingField.addObject(new Coords(9, 12), new Floor());
+        PlayingField.addObject(new Coords(10, 12), new Floor());
+        PlayingField.addObject(new Coords(11, 12), new Floor());
+        //PlayingField.addObject(new Coords(12, 12), new Floor());
+        PlayingField.addObject(new Coords(13, 12), new Floor());
+        PlayingField.addObject(new Coords(1, 11), new Floor());
+        PlayingField.addObject(new Coords(2, 11), new Floor());
+        PlayingField.addObject(new Coords(3, 11), new Junk());
+        PlayingField.addObject(new Coords(4, 11), new Junk());
+        PlayingField.addObject(new Coords(5, 11), new Junk());
+        PlayingField.addObject(new Coords(6, 11), new Floor());
+        PlayingField.addObject(new Coords(7, 11), new Floor());
+        PlayingField.addObject(new Coords(8, 11), new Floor());
+        PlayingField.addObject(new Coords(9, 11), new Floor());
+        PlayingField.addObject(new Coords(10, 11), new Floor());
+        //PlayingField.addObject(new Coords(11, 11), new Floor());
+        PlayingField.addObject(new Coords(12, 11), new Floor());
+        PlayingField.addObject(new Coords(13, 11), new Floor());
 
         var jun = new JuniorProgrammer();
         var coords = new Coords(1, 13);
@@ -74,7 +101,11 @@ public class Main {
         Display.display();
 
         var mover = new UnitMover();
-        mover.move(jun, coords, Direction.RIGHT, 13);
+        mover.move(jun, coords, Direction.RIGHT, 20);
+        mover.move(jun, coords, Direction.RIGHT, 2);
+        mover.move(jun, coords, Direction.DOWN, 2);
+        mover.move(jun, coords, Direction.RIGHT, 2);
+        System.out.println("Unit coords: " + coords);
 
         //System.out.println(colorize("Temporary object - beer: ", BRIGHT_BLACK_TEXT(), BLACK_BACK()) + colorize("B", BLACK_TEXT(), CYAN_BACK()));
 

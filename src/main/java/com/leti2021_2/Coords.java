@@ -29,4 +29,9 @@ public class Coords {
         return (coordsA.x == coordsB.x)
                 && (coordsA.y == coordsB.y);
     }
+
+    @Override
+    public String toString() {
+        return "x " + x + " y " + y;
+    }
 }
