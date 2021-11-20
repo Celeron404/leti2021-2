@@ -65,6 +65,7 @@ public class PlayingField {
                 return;
             }
         }
+        throw new IllegalArgumentException(coords.getX() + " " + coords.getX() + " : there no object on these coordinates.");
     }
 
     public static int numberOfObjects() { return LandscapeObjectsMap.size(); }
