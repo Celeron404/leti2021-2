@@ -57,13 +57,23 @@ public class PlayingField {
         LandscapeObjectsMap.put(coords, object);
     }
 
-    public static int numberOfObjects() { return LandscapeObjectsMap.size(); }
-
     public static void replaceObject(Coords coords, FieldObject newObject) {
         for (Map.Entry<Coords, FieldObject> entry : LandscapeObjectsMap.entrySet()) {
-            if (Coords.isEqual(entry.getKey(), coords))
-                throw new IllegalArgumentException(coords.getX() + " " + coords.getX() + " : these coordinates are occupied by another object.");
+            if (Coords.isEqual(entry.getKey(), coords)) {
+                LandscapeObjectsMap.remove(entry.getKey());
+                addObject(coords, newObject);
+                return;
+            }
         }
-        LandscapeObjectsMap.put(coords, newObject);
+    }
+
+    public static int numberOfObjects() { return LandscapeObjectsMap.size(); }
+
+    private static void removeObject(Coords coords, FieldObject newObject) {
+        for (Map.Entry<Coords, FieldObject> entry : LandscapeObjectsMap.entrySet()) {
+            if (Coords.isEqual(entry.getKey(), coords))
+                LandscapeObjectsMap.remove(entry.getKey());
+        }
+        throw new IllegalArgumentException(coords.getX() + " " + coords.getX() + " : there no object on these coordinates.");
     }
 }

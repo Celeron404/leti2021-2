@@ -1,5 +1,6 @@
 package com.leti2021_2;
 
+import com.leti2021_2.PlayingFieldPresets.DebugPreset15x15;
 import com.leti2021_2.PlayingFieldPresets.DemoPreset15x15;
 
 import java.io.BufferedReader;
@@ -10,8 +11,8 @@ public class Main {
     public static boolean DEBUG = true;
 
     public static void main(String[] args) throws IOException {
-        //DebugPreset15x15.run();
-        DemoPreset15x15.run();
+        DebugPreset15x15.run();
+        //DemoPreset15x15.run();
         if (DEBUG) {
             boolean inputIsCorrect = false;
             while (!inputIsCorrect) {

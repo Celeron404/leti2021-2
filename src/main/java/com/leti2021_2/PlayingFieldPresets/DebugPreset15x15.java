@@ -5,6 +5,7 @@ import com.leti2021_2.Display;
 import com.leti2021_2.FieldObjects.*;
 import com.leti2021_2.FieldObjects.Factories.JuniorUnitAbstractFactory;
 import com.leti2021_2.FieldObjects.Factories.UniversityFactory;
+import com.leti2021_2.FieldObjects.LandscapeObjects.Impassable.Wall;
 import com.leti2021_2.FieldObjects.LandscapeObjects.Passable.Floor;
 import com.leti2021_2.FieldObjects.LandscapeObjects.Passable.Tree;
 import com.leti2021_2.FieldObjects.TemporaryObjects.Beer;
@@ -88,6 +89,7 @@ public class DebugPreset15x15 {
         //PlayingField.addObject(new Coords(11, 11), new Floor());
         PlayingField.addObject(new Coords(12, 11), new Floor());
         PlayingField.addObject(new Coords(13, 11), new Floor());
+        PlayingField.replaceObject(new Coords(13, 11), new Wall());
 
         var jun = new JuniorProgrammer();
         var coords = new Coords(1, 13);
