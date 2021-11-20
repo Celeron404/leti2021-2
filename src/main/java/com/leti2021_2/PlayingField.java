@@ -12,7 +12,7 @@ public class PlayingField {
     private static int sideSize;
     private static int square;
     private static boolean isFieldExists = false;
-    private static Map<Coords, FieldObject> LandscapeObjectsMap = new HashMap<>();
+    private static Map<Coords, FieldObject> landscapeObjectsMap = new HashMap<>();
 
     private PlayingField() { }
     public PlayingField(int sideSize) {
@@ -42,7 +42,7 @@ public class PlayingField {
     }
 
     public static FieldObject getObject(Coords coords) {
-        for (Map.Entry<Coords, FieldObject> entry : LandscapeObjectsMap.entrySet()) {
+        for (Map.Entry<Coords, FieldObject> entry : landscapeObjectsMap.entrySet()) {
             if (Coords.isEqual(entry.getKey(), coords))
                 return entry.getValue();
         }
@@ -50,17 +50,17 @@ public class PlayingField {
     }
 
     public static void addObject(Coords coords, FieldObject object) {
-        for (Map.Entry<Coords, FieldObject> entry : LandscapeObjectsMap.entrySet()) {
+        for (Map.Entry<Coords, FieldObject> entry : landscapeObjectsMap.entrySet()) {
             if (Coords.isEqual(entry.getKey(), coords))
                 throw new IllegalArgumentException(coords.getX() + " " + coords.getX() + " : these coordinates are occupied by another object.");
         }
-        LandscapeObjectsMap.put(coords, object);
+        landscapeObjectsMap.put(coords, object);
     }
 
     public static void replaceObject(Coords coords, FieldObject newObject) {
-        for (Map.Entry<Coords, FieldObject> entry : LandscapeObjectsMap.entrySet()) {
+        for (Map.Entry<Coords, FieldObject> entry : landscapeObjectsMap.entrySet()) {
             if (Coords.isEqual(entry.getKey(), coords)) {
-                LandscapeObjectsMap.remove(entry.getKey());
+                landscapeObjectsMap.remove(entry.getKey());
                 addObject(coords, newObject);
                 return;
             }
@@ -68,12 +68,14 @@ public class PlayingField {
         throw new IllegalArgumentException(coords.getX() + " " + coords.getX() + " : there no object on these coordinates.");
     }
 
-    public static int numberOfObjects() { return LandscapeObjectsMap.size(); }
+    public static int numberOfObjects() { return landscapeObjectsMap.size(); }
+
+    public static Map<Coords, FieldObject> getPlayingFieldMap() { return landscapeObjectsMap; }
 
     private static void removeObject(Coords coords, FieldObject newObject) {
-        for (Map.Entry<Coords, FieldObject> entry : LandscapeObjectsMap.entrySet()) {
+        for (Map.Entry<Coords, FieldObject> entry : landscapeObjectsMap.entrySet()) {
             if (Coords.isEqual(entry.getKey(), coords))
-                LandscapeObjectsMap.remove(entry.getKey());
+                landscapeObjectsMap.remove(entry.getKey());
         }
         throw new IllegalArgumentException(coords.getX() + " " + coords.getX() + " : there no object on these coordinates.");
     }
