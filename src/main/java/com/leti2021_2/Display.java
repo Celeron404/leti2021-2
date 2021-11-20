@@ -12,7 +12,7 @@ import static com.diogonunes.jcolor.Ansi.colorize;
 import static com.diogonunes.jcolor.Attribute.*;
 
 public class Display {
-    public static void display() {
+    public static void run() {
         // instead of console clear
         for (int i = 0; i < 50; i++) { System.out.println(); }
 

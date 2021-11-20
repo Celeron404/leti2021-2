@@ -5,9 +5,6 @@ import com.leti2021_2.Display;
 import com.leti2021_2.FieldObjects.LandscapeObjects.PassableLandscapeObject;
 import com.leti2021_2.FieldObjects.Units.Unit;
 import com.leti2021_2.PlayingField;
-import com.leti2021_2.TemporaryObjects;
-
-import java.lang.reflect.Field;
 
 public class UnitMover {
     public void move(Unit unit, Coords unitCoords, Direction direction, int numberOfSteps) {
@@ -36,7 +33,7 @@ public class UnitMover {
             unitCoords.setX(targetCoords.getX());
             unitCoords.setY(targetCoords.getY());
 
-            Display.display();
+            Display.run();
             try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {

@@ -56,4 +56,14 @@ public class PlayingField {
         }
         LandscapeObjectsMap.put(coords, object);
     }
+
+    public static int numberOfObjects() { return LandscapeObjectsMap.size(); }
+
+    public static void replaceObject(Coords coords, FieldObject newObject) {
+        for (Map.Entry<Coords, FieldObject> entry : LandscapeObjectsMap.entrySet()) {
+            if (Coords.isEqual(entry.getKey(), coords))
+                throw new IllegalArgumentException(coords.getX() + " " + coords.getX() + " : these coordinates are occupied by another object.");
+        }
+        LandscapeObjectsMap.put(coords, newObject);
+    }
 }

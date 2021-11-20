@@ -1,11 +1,7 @@
 package com.leti2021_2.FieldObjects;
 
 import com.leti2021_2.Coords;
-import com.leti2021_2.Displayable;
-import com.leti2021_2.FieldObjects.LandscapeObjects.PassableLandscapeObject;
 import com.leti2021_2.FieldObjects.Units.Unit;
-import com.leti2021_2.PlayingField;
-import com.leti2021_2.TemporaryObjects;
 
 import java.util.HashMap;
 import java.util.Map;
