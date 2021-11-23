@@ -64,7 +64,7 @@ public class DemoPreset10x10 {
         PlayingField.addObject(new Coords(7, 8), new Junk());
 
         var floorGenerator = new FloorGenerator();
-        floorGenerator.generateFieldObjects(0);
+        floorGenerator.generateFieldObjects();
 
         //temporary objects
         TemporaryObjects.addObject(new Coords(6, 1), new Beer());

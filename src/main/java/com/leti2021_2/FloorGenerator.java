@@ -5,8 +5,7 @@ import com.leti2021_2.FieldObjects.LandscapeObjects.Passable.Floor;
 
 public class FloorGenerator implements ObjectsGenerator { //generates a border
     @Override
-    public void generateFieldObjects(int numberOfObjects) {
-        // value numberOfObjects is not used in this method
+    public void generateFieldObjects() {
         int sideSize = PlayingField.getSideSize();
 
         for (int i = 1; i < sideSize - 1; i++) {

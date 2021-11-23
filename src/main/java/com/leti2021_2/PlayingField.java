@@ -20,7 +20,7 @@ public class PlayingField {
             setSideSize(sideSize);
             setSquare(sideSize);
             var wallGenerator = new WallGenerator();
-            wallGenerator.generateFieldObjects(0);
+            wallGenerator.generateFieldObjects();
             isFieldExists = true;
         }
         else

@@ -75,7 +75,7 @@ public class DemoPreset15x15 {
         PlayingField.addObject(new Coords(5, 2), new Tree());
 
         var floorGenerator = new FloorGenerator();
-        floorGenerator.generateFieldObjects(0);
+        floorGenerator.generateFieldObjects();
 
         //temporary objects
         TemporaryObjects.addObject(new Coords(10, 1), new Beer());
