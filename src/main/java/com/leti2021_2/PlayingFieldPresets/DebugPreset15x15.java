@@ -1,7 +1,6 @@
 package com.leti2021_2.PlayingFieldPresets;
 
-import com.leti2021_2.Coords;
-import com.leti2021_2.Display;
+import com.leti2021_2.*;
 import com.leti2021_2.FieldObjects.*;
 import com.leti2021_2.FieldObjects.Factories.JuniorUnitAbstractFactory;
 import com.leti2021_2.FieldObjects.Factories.UniversityFactory;
@@ -12,11 +11,13 @@ import com.leti2021_2.FieldObjects.TemporaryObjects.Beer;
 import com.leti2021_2.FieldObjects.TemporaryObjects.EasyTask;
 import com.leti2021_2.FieldObjects.TemporaryObjects.HardTask;
 import com.leti2021_2.FieldObjects.Units.JuniorProgrammer;
-import com.leti2021_2.PlayingField;
-import com.leti2021_2.TemporaryObjects;
+
+import java.io.IOException;
 
 public class DebugPreset15x15 {
-    public static void run() {
+    static int sideSize = 15;
+
+    public static void fill() throws IOException {
         var juniorFactory = new JuniorUnitAbstractFactory();
         var juniorTester = juniorFactory.createTester();
         var juniorProgrammer = juniorFactory.createProgrammer();
@@ -32,23 +33,15 @@ public class DebugPreset15x15 {
         FieldObject university0 = universityFactory.createObject();
         System.out.println(university0.getDescription());
         System.out.println();
+        WaitForUserInput.run();
 
-        int sideSize = 15;
         var playingField = new PlayingField(sideSize);
-
-        var university = new University();
-        UniversitiesMap.universities.add(university);
-        for (int i = 1; i < sideSize - 2; i++) {
-            PlayingField.addObject(new Coords(i, i), university);
-        }
 
         TemporaryObjects.addObject(new Coords(1, 1), new Beer());
         TemporaryObjects.addObject(new Coords(1, 2), new Beer());
         TemporaryObjects.addObject(new Coords(1, 3), new Beer());
         TemporaryObjects.addObject(new Coords(2, 1), new EasyTask());
         TemporaryObjects.addObject(new Coords(3, 1), new HardTask());
-
-        Display.run();
 
         PlayingField.addObject(new Coords(1, 13), new Floor());
         PlayingField.addObject(new Coords(2, 13), new Floor());
@@ -91,19 +84,6 @@ public class DebugPreset15x15 {
         PlayingField.addObject(new Coords(13, 11), new Floor());
         PlayingField.replaceObject(new Coords(13, 11), new Wall());
 
-        var jun = new JuniorProgrammer();
-        var coords = new Coords(1, 13);
-        university.addObject(coords, jun);
-
-        Display.run();
-
-        var mover = new UnitMover();
-        mover.move(jun, coords, Direction.RIGHT, 20);
-        mover.move(jun, coords, Direction.RIGHT, 2);
-        mover.move(jun, coords, Direction.DOWN, 2);
-        mover.move(jun, coords, Direction.RIGHT, 2);
-        System.out.println("Unit coords: " + coords);
-
         //System.out.println(colorize("Temporary object - beer: ", BRIGHT_BLACK_TEXT(), BLACK_BACK()) + colorize("B", BLACK_TEXT(), CYAN_BACK()));
 
         /*
@@ -111,5 +91,25 @@ public class DebugPreset15x15 {
         int objects = FieldObjectCounting.getNumberOfObjects();
         System.out.println("objects: " + objects);
         */
+    }
+
+
+    public static void run() {
+        var university = new University();
+        UniversitiesMap.universities.add(university);
+        for (int i = 1; i < sideSize - 2; i++) {
+            PlayingField.addObject(new Coords(i, i), university);
+        }
+
+        var jun = new JuniorProgrammer();
+        var coords = new Coords(1, 13);
+        university.addObject(coords, jun);
+
+        var mover = new UnitMover();
+        mover.move(jun, coords, Direction.RIGHT, 20);
+        mover.move(jun, coords, Direction.RIGHT, 2);
+        mover.move(jun, coords, Direction.DOWN, 2);
+        mover.move(jun, coords, Direction.RIGHT, 2);
+        System.out.println("Unit coords: " + coords);
     }
 }

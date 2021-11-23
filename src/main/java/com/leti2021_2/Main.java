@@ -11,13 +11,30 @@ public class Main {
     public static boolean DEBUG = true;
 
     public static void main(String[] args) throws IOException {
-        DebugPreset15x15.run();
-        //DemoPreset15x15.run();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String presetChoise = null;
+        boolean inputIsCorrect = false;
+        while (!inputIsCorrect) {
+            System.out.println("1) DebugPreset 15x15");
+            System.out.println("2) DemoPreset 15x15");
+            System.out.println("3) DemoPreset 10x10");
+            System.out.println("Choose the preset:");
+            presetChoise = reader.readLine();
+
+            if (presetChoise.equals("1")) {
+                inputIsCorrect = true;
+                DebugPreset15x15.fill();
+            } else if (presetChoise.equals("2")) {
+                inputIsCorrect = true;
+                DemoPreset15x15.fill();
+            }
+        }
+
         if (DEBUG) {
-            boolean inputIsCorrect = false;
+            inputIsCorrect = false;
             while (!inputIsCorrect) {
                 System.out.println("Need to check the filling of the map? y/n");
-                BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
                 String input = reader.readLine();
                 if (input.equals("y")) {
                     inputIsCorrect = true;
@@ -31,5 +48,19 @@ public class Main {
             }
         }
         Display.run();
+
+        inputIsCorrect = false;
+        while (!inputIsCorrect) {
+            if (presetChoise.equals("1")) {
+                inputIsCorrect = true;
+                DebugPreset15x15.run();
+            } else if (presetChoise.equals("2")) {
+                inputIsCorrect = true;
+                DemoPreset15x15.run();
+            }
+        }
+        System.in.read();
+
+
     }
 }
