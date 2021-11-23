@@ -39,7 +39,7 @@ public class Main {
                 if (input.equals("y")) {
                     inputIsCorrect = true;
                     MapFillingChecker.run();
-                    System.in.read();
+                    WaitForUserInput.run();
                 } else if (input.equals("n")) {
                     inputIsCorrect = true;
                 } else {
@@ -59,7 +59,7 @@ public class Main {
                 DemoPreset15x15.run();
             }
         }
-        System.in.read();
+        WaitForUserInput.run();
 
 
     }

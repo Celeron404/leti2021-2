@@ -11,6 +11,7 @@ import com.leti2021_2.FieldObjects.UnitMover;
 import com.leti2021_2.FieldObjects.UniversitiesMap;
 import com.leti2021_2.FieldObjects.University;
 import com.leti2021_2.PlayingField;
+import com.leti2021_2.WaitForUserInput;
 
 import java.io.IOException;
 
@@ -92,7 +93,7 @@ public class DemoPreset15x15 {
 
         var mover = new UnitMover();
         mover.move(juniorTester, coords, Direction.DOWN, 3);
-        System.in.read();
+        WaitForUserInput.run();
         mover.move(juniorTester, coords, Direction.RIGHT, 3);
         mover.move(juniorTester, coords, Direction.UP, 4);
         mover.move(juniorTester, coords, Direction.RIGHT, 4);
