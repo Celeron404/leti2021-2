@@ -2,10 +2,8 @@ package com.leti2021_2.PlayingFieldPresets;
 
 import com.leti2021_2.*;
 import com.leti2021_2.FieldObjects.Direction;
-import com.leti2021_2.FieldObjects.Factories.JuniorUnitAbstractFactory;
 import com.leti2021_2.FieldObjects.Factories.SeniorUnitAbstractFactory;
 import com.leti2021_2.FieldObjects.LandscapeObjects.Impassable.Wall;
-import com.leti2021_2.FieldObjects.LandscapeObjects.Passable.Floor;
 import com.leti2021_2.FieldObjects.LandscapeObjects.Passable.Junk;
 import com.leti2021_2.FieldObjects.LandscapeObjects.Passable.Table;
 import com.leti2021_2.FieldObjects.LandscapeObjects.Passable.Tree;
@@ -15,8 +13,7 @@ import com.leti2021_2.FieldObjects.TemporaryObjects.HardTask;
 import com.leti2021_2.FieldObjects.UnitMover;
 import com.leti2021_2.FieldObjects.UniversitiesMap;
 import com.leti2021_2.FieldObjects.University;
-
-import java.io.IOException;
+import com.leti2021_2.Generators.FloorGenerator;
 
 public class DemoPreset10x10 {
     public static void fill() {

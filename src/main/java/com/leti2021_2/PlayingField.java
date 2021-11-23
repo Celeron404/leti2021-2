@@ -1,6 +1,7 @@
 package com.leti2021_2;
 
 import com.leti2021_2.FieldObjects.FieldObject;
+import com.leti2021_2.Generators.WallGenerator;
 
 import java.util.HashMap;
 import java.util.Map;
