@@ -1,6 +1,7 @@
 package com.leti2021_2;
 
 import com.leti2021_2.PlayingFieldPresets.DebugPreset15x15;
+import com.leti2021_2.PlayingFieldPresets.DemoPreset10x10;
 import com.leti2021_2.PlayingFieldPresets.DemoPreset15x15;
 
 import java.io.BufferedReader;
@@ -21,12 +22,19 @@ public class Main {
             System.out.println("Choose the preset:");
             presetChoise = reader.readLine();
 
-            if (presetChoise.equals("1")) {
-                inputIsCorrect = true;
-                DebugPreset15x15.fill();
-            } else if (presetChoise.equals("2")) {
-                inputIsCorrect = true;
-                DemoPreset15x15.fill();
+            switch (presetChoise) {
+                case "1" -> {
+                    inputIsCorrect = true;
+                    DebugPreset15x15.fill();
+                }
+                case "2" -> {
+                    inputIsCorrect = true;
+                    DemoPreset15x15.fill();
+                }
+                case "3" -> {
+                    inputIsCorrect = true;
+                    DemoPreset10x10.fill();
+                }
             }
         }
 
@@ -51,12 +59,19 @@ public class Main {
 
         inputIsCorrect = false;
         while (!inputIsCorrect) {
-            if (presetChoise.equals("1")) {
-                inputIsCorrect = true;
-                DebugPreset15x15.run();
-            } else if (presetChoise.equals("2")) {
-                inputIsCorrect = true;
-                DemoPreset15x15.run();
+            switch (presetChoise) {
+                case "1" -> {
+                    inputIsCorrect = true;
+                    DebugPreset15x15.run();
+                }
+                case "2" -> {
+                    inputIsCorrect = true;
+                    DemoPreset15x15.run();
+                }
+                case "3" -> {
+                    inputIsCorrect = true;
+                    DemoPreset10x10.run();
+                }
             }
         }
         WaitForUserInput.run();

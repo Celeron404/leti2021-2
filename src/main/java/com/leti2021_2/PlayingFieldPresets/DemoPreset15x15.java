@@ -10,6 +10,7 @@ import com.leti2021_2.FieldObjects.LandscapeObjects.Passable.Tree;
 import com.leti2021_2.FieldObjects.UnitMover;
 import com.leti2021_2.FieldObjects.UniversitiesMap;
 import com.leti2021_2.FieldObjects.University;
+import com.leti2021_2.FloorGenerator;
 import com.leti2021_2.PlayingField;
 import com.leti2021_2.WaitForUserInput;
 
@@ -61,6 +62,9 @@ public class DemoPreset15x15 {
         PlayingField.addObject(new Coords(13, 3), new Tree());
 
         //outdoor
+        var university = new University();
+        UniversitiesMap.universities.add(university);
+        PlayingField.addObject(new Coords(2, 2), university);
         PlayingField.addObject(new Coords(1, 6), new Tree());
         PlayingField.addObject(new Coords(1, 5), new Tree());
         PlayingField.addObject(new Coords(1, 4), new Tree());
@@ -70,15 +74,8 @@ public class DemoPreset15x15 {
         PlayingField.addObject(new Coords(6, 1), new Tree());
         PlayingField.addObject(new Coords(5, 2), new Tree());
 
-        //floor
-        for (int i = 1; i < sideSize - 1; i++) {
-            for (int j = 1; j < sideSize - 1; j++) {
-                if (PlayingField.getObject(new Coords(i, j)) == null)
-                    PlayingField.addObject(new Coords(i, j), new Floor());
-            }
-        }
-
-
+        var floorGenerator = new FloorGenerator();
+        floorGenerator.generateFieldObjects(0);
     }
 
     public static void run() throws IOException {
