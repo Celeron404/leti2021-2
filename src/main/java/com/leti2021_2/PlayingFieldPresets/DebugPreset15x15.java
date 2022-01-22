@@ -11,8 +11,11 @@ import com.leti2021_2.FieldObjects.TemporaryObjects.Beer;
 import com.leti2021_2.FieldObjects.TemporaryObjects.EasyTask;
 import com.leti2021_2.FieldObjects.TemporaryObjects.HardTask;
 import com.leti2021_2.FieldObjects.Units.JuniorProgrammer;
+import com.leti2021_2.FieldObjects.Units.Unit;
 
 import java.io.IOException;
+
+import static com.leti2021_2.FieldObjects.UnitFactoryMaker.FactoryMaker.UnitType.JUNIOR;
 
 public class DebugPreset15x15 {
     static int sideSize = 15;
@@ -43,7 +46,7 @@ public class DebugPreset15x15 {
         TemporaryObjects.addObject(new Coords(2, 1), new EasyTask());
         TemporaryObjects.addObject(new Coords(3, 1), new HardTask());
 
-        PlayingField.addObject(new Coords(1, 13), new Floor());
+        //PlayingField.addObject(new Coords(1, 13), new Floor());
         PlayingField.addObject(new Coords(2, 13), new Floor());
         PlayingField.addObject(new Coords(3, 13), new Tree());
         PlayingField.addObject(new Coords(4, 13), new Tree());
@@ -94,22 +97,46 @@ public class DebugPreset15x15 {
     }
 
 
-    public static void run() {
+    public static void run() throws IOException {
         var university = new University();
         UniversitiesMap.universities.add(university);
-        for (int i = 1; i < sideSize - 2; i++) {
-            PlayingField.addObject(new Coords(i, i), university);
-        }
+        PlayingField.addObject(new Coords(1, 13), university);
 
-        var jun = new JuniorProgrammer();
-        var coords = new Coords(1, 13);
-        university.addObject(coords, jun);
+        var junFactory = UnitFactoryMaker.FactoryMaker.makeFactory(JUNIOR);
+        Unit junTester = junFactory.createTester();
+        var coordsOfJunTester = new Coords(2, 13);
+        university.addObject(coordsOfJunTester, junTester);
+        Display.run();
 
-        var mover = new UnitMover();
-        mover.move(jun, coords, Direction.RIGHT, 20);
-        mover.move(jun, coords, Direction.RIGHT, 2);
-        mover.move(jun, coords, Direction.DOWN, 2);
-        mover.move(jun, coords, Direction.RIGHT, 2);
-        System.out.println("Unit coords: " + coords);
+        WaitForUserInput.run();
+
+        //var jun = new JuniorProgrammer();
+        //var coords = new Coords(1, 13);
+        //university.addObject(coords, jun);
+
+        //var mover = new UnitMover();
+        //mover.move(jun, coords, Direction.RIGHT, 20);
+        //mover.move(jun, coords, Direction.RIGHT, 2);
+        //mover.move(jun, coords, Direction.DOWN, 2);
+        //mover.move(jun, coords, Direction.RIGHT, 2);
+        //System.out.println("Unit coords: " + coords);
+        //mover.move(junTester, coordsOfJunTester, Direction.RIGHT, 19);
+        //mover.move(junTester, coordsOfJunTester, Direction.RIGHT, 2);
+        //mover.move(junTester, coordsOfJunTester, Direction.DOWN, 2);
+        //mover.move(junTester, coordsOfJunTester, Direction.RIGHT, 2);
+        System.out.println("Unit coords: " + coordsOfJunTester);
+
+        WaitForUserInput.run();
+        junTester.setHealth(50);
+        System.out.println("Unit's health: " + junTester.getHealth());
+        System.out.println("-50");
+        junTester.setHealth(junTester.getHealth() - 50);
+        WaitForUserInput.run();
+        Display.run();
+
+        Unit junTester2 = junFactory.createTester();
+        university.addObject(coordsOfJunTester, junTester2);
+        Display.run();
+        WaitForUserInput.run();
     }
 }

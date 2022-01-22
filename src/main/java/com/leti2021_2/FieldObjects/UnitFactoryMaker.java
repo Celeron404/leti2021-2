@@ -18,7 +18,7 @@ public class UnitFactoryMaker {
                 case SENIOR:
                     return new SeniorUnitAbstractFactory();
                 default:
-                    throw new IllegalArgumentException("UnitType not supported.");
+                    throw new IllegalArgumentException("UnitType is not supported.");
             }
         }
     }

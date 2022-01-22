@@ -84,7 +84,7 @@ public class Display {
         return result;
     }
 
-    // Functional for DEBUG mode
+    // for DEBUG mode
     private static void drawDebugColumns() { // only for DEBUG = true
         System.out.print(colorize("  ", BLACK_TEXT(), BRIGHT_BLACK_BACK()));
 

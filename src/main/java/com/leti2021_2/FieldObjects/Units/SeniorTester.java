@@ -27,8 +27,10 @@ public class SeniorTester extends Tester {
     public void setHealth(double input) {
         if (input >= 0)
             health = input;
-        else
-            throw new IllegalArgumentException("Health cannot be less then zero.");
+        else {
+            health = input;
+            super.notifyUniversity();
+        }
     }
 
     @Override
