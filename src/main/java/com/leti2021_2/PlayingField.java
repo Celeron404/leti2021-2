@@ -73,7 +73,7 @@ public class PlayingField {
 
     public static Map<Coords, FieldObject> getPlayingFieldMap() { return landscapeObjectsMap; }
 
-    private static void removeObject(Coords coords, FieldObject newObject) {
+    private static void removeObject(Coords coords) {
         for (Map.Entry<Coords, FieldObject> entry : landscapeObjectsMap.entrySet()) {
             if (Coords.isEqual(entry.getKey(), coords))
                 landscapeObjectsMap.remove(entry.getKey());
