@@ -4,13 +4,19 @@ import com.leti2021_2.FieldObjects.FieldObject;
 import com.leti2021_2.FieldObjects.University;
 
 public abstract class Unit implements FieldObject {
+
+    public enum UnitType {
+        PROGRAMMER, SUPPORTENGINEER, TESTER
+    }
+
     //abstract public String getDescription();
+    abstract public UnitType getType();
     abstract public double getHealth();
-    abstract public int getStressTolerance();
+    abstract public double getStressTolerance();
     abstract public double getSkillLvl();
 
     abstract public void setHealth(double input);
-    abstract public void setStressTolerance(int input);
+    abstract public void setStressTolerance(double input);
     abstract public void setSkillLvl(double input);
 
     //abstract public void display();
@@ -34,7 +40,7 @@ public abstract class Unit implements FieldObject {
         if (ownUniversity == null) {
             ownUniversity = university;
             notifyUniversity();
-        } else throw new IllegalCallerException("A Unit can only have one university.");
+        } else throw new IllegalCallerException("Unit can only have one university.");
     }
 
     private boolean isNewSubject = true; // if University didn't check the Unit

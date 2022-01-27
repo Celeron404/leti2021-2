@@ -1,8 +1,5 @@
 package com.leti2021_2.FieldObjects.Units;
 
-import com.leti2021_2.FieldObjects.FieldObject;
-import com.leti2021_2.FieldObjects.UnitFactoryMaker;
-
 import static com.diogonunes.jcolor.Ansi.colorize;
 import static com.diogonunes.jcolor.Attribute.BLACK_BACK;
 import static com.diogonunes.jcolor.Attribute.BRIGHT_BLUE_TEXT;
@@ -10,7 +7,7 @@ import static com.diogonunes.jcolor.Attribute.BRIGHT_BLUE_TEXT;
 public class JuniorTester extends Tester {
     static final String DESCRIPTION = "Junior Tester Description";
     private double health = 50;
-    private int stressTolerance = 2;
+    private double stressTolerance = 2;
     private double skillLvl = 10;
 
     @Override
@@ -20,7 +17,7 @@ public class JuniorTester extends Tester {
     @Override
     public double getHealth() { return health; }
     @Override
-    public int getStressTolerance() { return stressTolerance; }
+    public double getStressTolerance() { return stressTolerance; }
     @Override
     public double getSkillLvl() { return skillLvl; }
 
@@ -35,7 +32,7 @@ public class JuniorTester extends Tester {
     }
 
     @Override
-    public void setStressTolerance(int input) {
+    public void setStressTolerance(double input) {
         if (input >= 1)
             stressTolerance = input;
         else

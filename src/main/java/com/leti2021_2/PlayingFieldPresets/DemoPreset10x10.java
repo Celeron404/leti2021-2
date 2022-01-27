@@ -2,7 +2,7 @@ package com.leti2021_2.PlayingFieldPresets;
 
 import com.leti2021_2.*;
 import com.leti2021_2.FieldObjects.Direction;
-import com.leti2021_2.FieldObjects.Factories.SeniorUnitAbstractFactory;
+import com.leti2021_2.FieldObjects.Factories.Unit.SeniorUnitAbstractFactory;
 import com.leti2021_2.FieldObjects.LandscapeObjects.Impassable.Wall;
 import com.leti2021_2.FieldObjects.LandscapeObjects.Passable.Junk;
 import com.leti2021_2.FieldObjects.LandscapeObjects.Passable.Table;

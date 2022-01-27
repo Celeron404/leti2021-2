@@ -1,4 +1,4 @@
-package com.leti2021_2.FieldObjects.Factories;
+package com.leti2021_2.FieldObjects.Factories.Unit;
 
 import com.leti2021_2.FieldObjects.Units.*;
 
@@ -6,8 +6,7 @@ public class SeniorUnitAbstractFactory implements UnitAbstractFactory {
 
     @Override
     public Programmer createProgrammer() {
-        var programmer = new SeniorProgrammer();
-        return programmer;
+        return new SeniorProgrammer();
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.leti2021_2.FieldObjects.Factories;
+package com.leti2021_2.FieldObjects.Factories.Unit;
 
 import com.leti2021_2.FieldObjects.Units.*;
 

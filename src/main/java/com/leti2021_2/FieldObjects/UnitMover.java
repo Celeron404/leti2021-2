@@ -3,8 +3,10 @@ package com.leti2021_2.FieldObjects;
 import com.leti2021_2.Coords;
 import com.leti2021_2.Display;
 import com.leti2021_2.FieldObjects.LandscapeObjects.PassableLandscapeObject;
+import com.leti2021_2.FieldObjects.TemporaryObjectsStrategies.TemporaryObjectStrategySetter;
 import com.leti2021_2.FieldObjects.Units.Unit;
 import com.leti2021_2.PlayingField;
+import com.leti2021_2.TemporaryObjects;
 
 public class UnitMover {
     public void move(Unit unit, Coords unitCoords, Direction direction, int numberOfSteps) {
@@ -60,13 +62,17 @@ public class UnitMover {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
-                var doStepper = new DoStepper();
-                return doStepper.doStep(unit, unitCoords, direction);
             } else {
                 System.out.println(PlayingField.getObject(targetCoords).getDescription());
                 return false;
             }
+            if (TemporaryObjects.getObject(targetCoords) != null) {
+                TemporaryObject currentObject = (TemporaryObject) TemporaryObjects.getObject(targetCoords);
+                new TemporaryObjectStrategySetter().set(unit.getType(), currentObject);
+                currentObject.interactWithUnit(unit);
+            }
+            var doStepper = new DoStepper();
+            return doStepper.doStep(unit, unitCoords, direction);
         }
     }
 

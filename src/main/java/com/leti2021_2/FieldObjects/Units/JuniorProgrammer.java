@@ -9,8 +9,13 @@ import static com.diogonunes.jcolor.Attribute.BRIGHT_BLUE_TEXT;
 public class JuniorProgrammer extends Programmer {
     static final String DESCRIPTION = "Junior Programmer Description";
     private double health = 50;
-    private int stressTolerance = 1;
+    private double stressTolerance = 1;
     private double skillLvl = 15;
+    private boolean isAlive;
+
+    public JuniorProgrammer() {
+        isAlive = true;
+    }
 
     @Override
     public String getDescription() {
@@ -19,7 +24,7 @@ public class JuniorProgrammer extends Programmer {
     @Override
     public double getHealth() { return health; }
     @Override
-    public int getStressTolerance() { return stressTolerance; }
+    public double getStressTolerance() { return stressTolerance; }
     @Override
     public double getSkillLvl() { return skillLvl; }
 
@@ -29,12 +34,13 @@ public class JuniorProgrammer extends Programmer {
             health = input;
         else {
             health = input;
+            isAlive = false;
             super.notifyUniversity();
         }
     }
 
     @Override
-    public void setStressTolerance(int input) {
+    public void setStressTolerance(double input) {
         if (input >= 1)
             stressTolerance = input;
         else

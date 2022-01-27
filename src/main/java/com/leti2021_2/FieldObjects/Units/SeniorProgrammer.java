@@ -9,7 +9,7 @@ import static com.diogonunes.jcolor.Attribute.BRIGHT_BLUE_TEXT;
 public class SeniorProgrammer extends Programmer {
     static final String DESCRIPTION = "Senior Programmer Description";
     private double health = 100;
-    private int stressTolerance = 2;
+    private double stressTolerance = 2;
     private double skillLvl = 30;
 
     @Override
@@ -19,7 +19,7 @@ public class SeniorProgrammer extends Programmer {
     @Override
     public double getHealth() { return health; }
     @Override
-    public int getStressTolerance() { return stressTolerance; }
+    public double getStressTolerance() { return stressTolerance; }
     @Override
     public double getSkillLvl() { return skillLvl; }
 
@@ -34,7 +34,7 @@ public class SeniorProgrammer extends Programmer {
     }
 
     @Override
-    public void setStressTolerance(int input) {
+    public void setStressTolerance(double input) {
         if (input >= 1)
             stressTolerance = input;
         else
