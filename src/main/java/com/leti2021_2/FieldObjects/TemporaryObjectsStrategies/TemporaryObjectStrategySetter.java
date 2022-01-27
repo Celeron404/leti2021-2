@@ -6,9 +6,10 @@ import com.leti2021_2.FieldObjects.TemporaryObjects.EasyTask;
 import com.leti2021_2.FieldObjects.TemporaryObjects.HardTask;
 import com.leti2021_2.FieldObjects.Units.SupportEngineer;
 import com.leti2021_2.FieldObjects.Units.Unit;
+import com.leti2021_2.FieldObjects.Units.UnitType;
 
 public class TemporaryObjectStrategySetter {
-    public void set(Unit.UnitType unitType, TemporaryObject object) {
+    public void set(UnitType unitType, TemporaryObject object) {
         TemporaryObject.TemporaryObjectType objectType = object.getType();
         switch (objectType) {
             case BEER -> {

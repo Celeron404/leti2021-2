@@ -7,46 +7,12 @@ import static com.diogonunes.jcolor.Attribute.BLACK_BACK;
 import static com.diogonunes.jcolor.Attribute.BRIGHT_BLUE_TEXT;
 
 public class JuniorSupportEngineer extends SupportEngineer {
-    static final String DESCRIPTION = "Junior Support Engineer Description";
-    private double health = 50;
-    private double stressTolerance = 3;
-    private double skillLvl = 8;
 
-    @Override
-    public String getDescription() {
-        return DESCRIPTION;
-    }
-    @Override
-    public double getHealth() { return health; }
-    @Override
-    public double getStressTolerance() { return stressTolerance; }
-    @Override
-    public double getSkillLvl() { return skillLvl; }
-
-    @Override
-    public void setHealth(double input) {
-        if (input > 0)
-            health = input;
-        else {
-            health = input;
-            super.notifyUniversity();
-        }
-    }
-
-    @Override
-    public void setStressTolerance(double input) {
-        if (input >= 1)
-            stressTolerance = input;
-        else
-            throw new IllegalArgumentException("Stress Tolerance cannot be less then one.");
-    }
-
-    @Override
-    public void setSkillLvl(double input) {
-        if (input >= 0)
-            skillLvl = input;
-        else
-            throw new IllegalArgumentException("Efficiency cannot be less then zero.");
+    public JuniorSupportEngineer() {
+        super.setHealth(50);
+        super.setStressTolerance(3);
+        super.setSkillLvl(8);
+        super.setDESCRIPTION("Junior Support Engineer Description");
     }
 
     @Override

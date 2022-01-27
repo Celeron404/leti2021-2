@@ -16,7 +16,7 @@ public class University implements FieldObject, Observer {
     static final String DESCRIPTION = "This is university. We make more workers!";
     boolean isPassable = false;
     private double health = 200;
-    private int maxUnits = 10; // max units under control (at the same time)
+    private final int maxUnits = 10; // max units under control (at the same time)
     private int numberOfUnits = 0;
     private Map<Coords, Unit> unitsMap = new HashMap<>();
 
@@ -33,14 +33,14 @@ public class University implements FieldObject, Observer {
 
     @Override
     public void update(Unit unit) {
-        if (unit.getIsNewSubject() && unit.getHealth() > 0) {
+        if (unit.getIsNewSubject() && unit.isAlive()) {
             if (numberOfUnits < maxUnits) {
                 numberOfUnits++;
                 System.out.println("The " + unit.getDescription() + " went on it's own way.");
             } else {
                 System.out.println("We can't produce more units than " + maxUnits + "!");
             }
-        } else if (unit.getHealth() <= 0) {
+        } else if (!unit.isAlive()) {
             if (numberOfUnits > 0) {
                 System.out.println("The " + unit.getDescription() + " went to eternal rest.");
                 removeObject(unit);
