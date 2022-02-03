@@ -1,7 +1,7 @@
 package com.leti2021_2.PlayingFieldPresets;
 
 import com.leti2021_2.*;
-import com.leti2021_2.FieldObjects.Direction;
+import com.leti2021_2.FieldObjects.*;
 import com.leti2021_2.FieldObjects.Factories.Unit.SeniorUnitAbstractFactory;
 import com.leti2021_2.FieldObjects.LandscapeObjects.Impassable.Wall;
 import com.leti2021_2.FieldObjects.LandscapeObjects.Passable.Junk;
@@ -10,9 +10,6 @@ import com.leti2021_2.FieldObjects.LandscapeObjects.Passable.Tree;
 import com.leti2021_2.FieldObjects.TemporaryObjects.Beer;
 import com.leti2021_2.FieldObjects.TemporaryObjects.EasyTask;
 import com.leti2021_2.FieldObjects.TemporaryObjects.HardTask;
-import com.leti2021_2.FieldObjects.UnitMover;
-import com.leti2021_2.FieldObjects.UniversitiesMap;
-import com.leti2021_2.FieldObjects.University;
 import com.leti2021_2.Generators.FloorGenerator;
 
 public class DemoPreset10x10 {
@@ -64,9 +61,9 @@ public class DemoPreset10x10 {
         floorGenerator.generateFieldObjects();
 
         //temporary objects
-        TemporaryObjects.addObject(new Coords(6, 1), new Beer());
-        TemporaryObjects.addObject(new Coords(8, 8), new HardTask());
-        TemporaryObjects.addObject(new Coords(4, 2), new EasyTask());
+        TemporaryObjectsMap.addObject(new Coords(6, 1), new Beer());
+        TemporaryObjectsMap.addObject(new Coords(8, 8), new HardTask());
+        TemporaryObjectsMap.addObject(new Coords(4, 2), new EasyTask());
 
     }
 

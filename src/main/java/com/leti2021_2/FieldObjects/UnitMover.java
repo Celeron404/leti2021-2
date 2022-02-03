@@ -6,7 +6,6 @@ import com.leti2021_2.FieldObjects.LandscapeObjects.PassableLandscapeObject;
 import com.leti2021_2.FieldObjects.TemporaryObjectsStrategies.TemporaryObjectStrategySetter;
 import com.leti2021_2.FieldObjects.Units.Unit;
 import com.leti2021_2.PlayingField;
-import com.leti2021_2.TemporaryObjects;
 
 public class UnitMover {
     public void move(Unit unit, Coords unitCoords, Direction direction, int numberOfSteps) {
@@ -66,10 +65,11 @@ public class UnitMover {
                 System.out.println(PlayingField.getObject(targetCoords).getDescription());
                 return false;
             }
-            if (TemporaryObjects.getObject(targetCoords) != null) {
-                TemporaryObject currentObject = (TemporaryObject) TemporaryObjects.getObject(targetCoords);
+            if (TemporaryObjectsMap.getObject(targetCoords) != null) {
+                TemporaryObject currentObject = (TemporaryObject) TemporaryObjectsMap.getObject(targetCoords);
                 new TemporaryObjectStrategySetter().set(unit.getType(), currentObject);
                 currentObject.interactWithUnit(unit);
+                TemporaryObjectsMap.removeObject(targetCoords);
             }
             var doStepper = new DoStepper();
             return doStepper.doStep(unit, unitCoords, direction);

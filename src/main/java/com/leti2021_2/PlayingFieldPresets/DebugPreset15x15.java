@@ -41,11 +41,11 @@ public class DebugPreset15x15 {
 
         var playingField = new PlayingField(sideSize);
 
-        TemporaryObjects.addObject(new Coords(1, 1), new Beer());
-        TemporaryObjects.addObject(new Coords(1, 2), new Beer());
-        TemporaryObjects.addObject(new Coords(1, 3), new Beer());
-        TemporaryObjects.addObject(new Coords(2, 1), new EasyTask());
-        TemporaryObjects.addObject(new Coords(3, 1), new HardTask());
+        TemporaryObjectsMap.addObject(new Coords(1, 1), new Beer());
+        TemporaryObjectsMap.addObject(new Coords(1, 2), new Beer());
+        TemporaryObjectsMap.addObject(new Coords(1, 3), new Beer());
+        TemporaryObjectsMap.addObject(new Coords(2, 1), new EasyTask());
+        TemporaryObjectsMap.addObject(new Coords(3, 1), new HardTask());
 
         PlayingField.addObject(new Coords(3, 13), new Tree());
         PlayingField.addObject(new Coords(4, 13), new Tree());
@@ -73,6 +73,14 @@ public class DebugPreset15x15 {
         Unit junTester = junFactory.createTester();
         var coordsOfJunTester = new Coords(2, 4);
         university.addObject(coordsOfJunTester, junTester);
+
+        Unit junProger = junFactory.createProgrammer();
+        var coordsOfJunProger = new Coords(3, 4);
+        university.addObject(coordsOfJunProger, junProger);
+        Unit junSupportEngineer = junFactory.createSupportEngineer();
+        var coordsOfJunSE = new Coords(4, 4);
+        university.addObject(coordsOfJunSE, junSupportEngineer);
+
         Display.run();
 
         WaitForUserInput.run();
@@ -96,7 +104,6 @@ public class DebugPreset15x15 {
         System.out.println("Unit coords: " + coordsOfJunTester);
         WaitForUserInput.run();
 
-        WaitForUserInput.run();
         junTester.setHealth(50);
         System.out.println("Unit's health: " + junTester.getHealth());
         System.out.println("-50");

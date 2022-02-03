@@ -1,9 +1,9 @@
 package com.leti2021_2.FieldObjects;
 
 import com.leti2021_2.Coords;
-import com.leti2021_2.FieldObjects.FieldObject;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class TemporaryObjectsMap {
@@ -25,10 +25,12 @@ public class TemporaryObjectsMap {
         temporaryObjectsMap.put(coords, object);
     }
 
-    private static void removeObject(Coords coords) {
-        for (Map.Entry<Coords, FieldObject> entry : temporaryObjectsMap.entrySet()) {
-            if (Coords.isEqual(entry.getKey(), coords))
-                temporaryObjectsMap.remove(entry.getKey());
+    public static void removeObject(Coords coords) {
+        for (Map.Entry<Coords, FieldObject> item : temporaryObjectsMap.entrySet()) {
+            if (Coords.isEqual(item.getKey(), coords)) {
+                temporaryObjectsMap.remove(item.getKey());
+                return;
+            }
         }
         throw new IllegalArgumentException(coords.getX() + " " + coords.getX() + " : there no object on these coordinates.");
     }

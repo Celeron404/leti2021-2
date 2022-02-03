@@ -1,6 +1,7 @@
 package com.leti2021_2;
 
 import com.leti2021_2.FieldObjects.FieldObject;
+import com.leti2021_2.FieldObjects.TemporaryObjectsMap;
 import com.leti2021_2.FieldObjects.UniversitiesMap;
 import com.leti2021_2.FieldObjects.University;
 import java.io.IOException;
@@ -75,7 +76,7 @@ public class Display {
                 return result;
         }
 
-        result = TemporaryObjects.getObject(coords);
+        result = TemporaryObjectsMap.getObject(coords);
         if (result != null)
             return result;
         else

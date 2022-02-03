@@ -6,6 +6,7 @@ import com.leti2021_2.Observer.Observer;
 import org.w3c.dom.ls.LSOutput;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 import static com.diogonunes.jcolor.Ansi.colorize;
@@ -68,12 +69,12 @@ public class University implements FieldObject, Observer {
     }
 
     public void removeObject(Unit unit) {
-        for (Map.Entry<Coords, Unit> entry : unitsMap.entrySet()) {
-            if (entry.getValue() == unit) {
-                var key = entry.getKey();
-                unitsMap.remove(key);
-            } else
-                throw new IllegalArgumentException("This university can not contain this Unit.");
+        for (Map.Entry<Coords, Unit> item : unitsMap.entrySet()) {
+            if (item.getValue() == unit) {
+                unitsMap.remove(item.getKey());
+                return;
+            }
         }
+        throw new IllegalArgumentException("This university can not contain this Unit.");
     }
 }
