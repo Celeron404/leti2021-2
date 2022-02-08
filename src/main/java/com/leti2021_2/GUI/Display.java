@@ -1,9 +1,13 @@
-package com.leti2021_2;
+package com.leti2021_2.GUI;
 
+import com.leti2021_2.Coords;
 import com.leti2021_2.FieldObjects.FieldObject;
 import com.leti2021_2.FieldObjects.TemporaryObjectsMap;
 import com.leti2021_2.FieldObjects.UniversitiesMap;
 import com.leti2021_2.FieldObjects.University;
+import com.leti2021_2.Main;
+import com.leti2021_2.PlayingField;
+
 import java.io.IOException;
 
 

@@ -9,7 +9,8 @@ import com.leti2021_2.FieldObjects.LandscapeObjects.Passable.Tree;
 import com.leti2021_2.FieldObjects.TemporaryObjects.Beer;
 import com.leti2021_2.FieldObjects.TemporaryObjects.EasyTask;
 import com.leti2021_2.FieldObjects.TemporaryObjects.HardTask;
-import com.leti2021_2.Generators.FloorGenerator;
+import com.leti2021_2.GUI.UserInput;
+import com.leti2021_2.FieldObjects.Generators.FloorGenerator;
 
 import java.io.IOException;
 
@@ -96,7 +97,7 @@ public class DemoPreset15x15 {
 
         var mover = new UnitMover();
         mover.move(juniorTester, coords, Direction.DOWN, 3);
-        WaitForUserInput.run();
+        UserInput.waitForInput();
         mover.move(juniorTester, coords, Direction.RIGHT, 3);
         mover.move(juniorTester, coords, Direction.UP, 4);
         mover.move(juniorTester, coords, Direction.RIGHT, 4);

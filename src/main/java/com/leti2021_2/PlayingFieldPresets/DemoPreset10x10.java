@@ -10,7 +10,7 @@ import com.leti2021_2.FieldObjects.LandscapeObjects.Passable.Tree;
 import com.leti2021_2.FieldObjects.TemporaryObjects.Beer;
 import com.leti2021_2.FieldObjects.TemporaryObjects.EasyTask;
 import com.leti2021_2.FieldObjects.TemporaryObjects.HardTask;
-import com.leti2021_2.Generators.FloorGenerator;
+import com.leti2021_2.FieldObjects.Generators.FloorGenerator;
 
 public class DemoPreset10x10 {
     public static void fill() {

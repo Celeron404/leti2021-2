@@ -1,8 +1,7 @@
-package com.leti2021_2.Generators;
+package com.leti2021_2.FieldObjects.Generators;
 
 import com.leti2021_2.Coords;
 import com.leti2021_2.FieldObjects.LandscapeObjects.Passable.Floor;
-import com.leti2021_2.ObjectsGenerator;
 import com.leti2021_2.PlayingField;
 
 public class FloorGenerator implements ObjectsGenerator { //generates a border

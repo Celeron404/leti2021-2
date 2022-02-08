@@ -1,5 +1,7 @@
 package com.leti2021_2;
 
+import com.leti2021_2.GUI.Display;
+import com.leti2021_2.GUI.UserInput;
 import com.leti2021_2.PlayingFieldPresets.DebugPreset15x15;
 import com.leti2021_2.PlayingFieldPresets.DemoPreset10x10;
 import com.leti2021_2.PlayingFieldPresets.DemoPreset15x15;
@@ -47,7 +49,7 @@ public class Main {
                 if (input.equals("y")) {
                     inputIsCorrect = true;
                     MapFillingChecker.run();
-                    WaitForUserInput.run();
+                    UserInput.waitForInput();
                 } else if (input.equals("n")) {
                     inputIsCorrect = true;
                 } else {
@@ -74,8 +76,6 @@ public class Main {
                 }
             }
         }
-        WaitForUserInput.run();
-
-
+        UserInput.waitForInput();
     }
 }

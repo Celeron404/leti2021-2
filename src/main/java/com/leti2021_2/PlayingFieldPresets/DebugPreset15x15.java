@@ -6,13 +6,14 @@ import com.leti2021_2.FieldObjects.Factories.Unit.JuniorUnitAbstractFactory;
 import com.leti2021_2.FieldObjects.Factories.Unit.UnitFactoryMaker;
 import com.leti2021_2.FieldObjects.Factories.UniversityFactory;
 import com.leti2021_2.FieldObjects.LandscapeObjects.Impassable.Wall;
-import com.leti2021_2.FieldObjects.LandscapeObjects.Passable.Floor;
 import com.leti2021_2.FieldObjects.LandscapeObjects.Passable.Tree;
 import com.leti2021_2.FieldObjects.TemporaryObjects.Beer;
 import com.leti2021_2.FieldObjects.TemporaryObjects.EasyTask;
 import com.leti2021_2.FieldObjects.TemporaryObjects.HardTask;
 import com.leti2021_2.FieldObjects.Units.Unit;
-import com.leti2021_2.Generators.FloorGenerator;
+import com.leti2021_2.GUI.Display;
+import com.leti2021_2.GUI.UserInput;
+import com.leti2021_2.FieldObjects.Generators.FloorGenerator;
 
 import java.io.IOException;
 
@@ -37,7 +38,7 @@ public class DebugPreset15x15 {
         FieldObject university0 = universityFactory.createObject();
         System.out.println(university0.getDescription());
         System.out.println();
-        WaitForUserInput.run();
+        UserInput.waitForInput();
 
         var playingField = new PlayingField(sideSize);
 
@@ -83,37 +84,37 @@ public class DebugPreset15x15 {
 
         Display.run();
 
-        WaitForUserInput.run();
+        UserInput.waitForInput();
 
         var mover = new UnitMover();
         mover.move(junTester, coordsOfJunTester, Direction.DOWN, 2);
         System.out.println("Unit stats: " + junTester.getHealth() + " hp, " + junTester.getStressTolerance() + " stressTolerance, " + junTester.getSkillLvl() + " skillLvl.");
-        WaitForUserInput.run();
+        UserInput.waitForInput();
         mover.move(junTester, coordsOfJunTester, Direction.LEFT, 1);
         System.out.println("Unit stats: " + junTester.getHealth() + " hp, " + junTester.getStressTolerance() + " stressTolerance, " + junTester.getSkillLvl() + " skillLvl.");
-        WaitForUserInput.run();
+        UserInput.waitForInput();
         mover.move(junTester, coordsOfJunTester, Direction.RIGHT, 1);
         mover.move(junTester, coordsOfJunTester, Direction.DOWN, 1);
         System.out.println("Unit stats: " + junTester.getHealth() + " hp, " + junTester.getStressTolerance() + " stressTolerance, " + junTester.getSkillLvl() + " skillLvl.");
-        WaitForUserInput.run();
+        UserInput.waitForInput();
         mover.move(junTester, coordsOfJunTester, Direction.DOWN, 1);
         System.out.println("Unit stats: " + junTester.getHealth() + " hp, " + junTester.getStressTolerance() + " stressTolerance, " + junTester.getSkillLvl() + " skillLvl.");
-        WaitForUserInput.run();
+        UserInput.waitForInput();
         mover.move(junTester, coordsOfJunTester, Direction.RIGHT, 1);
         System.out.println("Unit stats: " + junTester.getHealth() + " hp, " + junTester.getStressTolerance() + " stressTolerance, " + junTester.getSkillLvl() + " skillLvl.");
         System.out.println("Unit coords: " + coordsOfJunTester);
-        WaitForUserInput.run();
+        UserInput.waitForInput();
 
         junTester.setHealth(50);
         System.out.println("Unit's health: " + junTester.getHealth());
         System.out.println("-50");
         junTester.setHealth(junTester.getHealth() - 50);
-        WaitForUserInput.run();
+        UserInput.waitForInput();
         Display.run();
 
-        Unit junTester2 = junFactory.createTester();
-        university.addObject(coordsOfJunTester, junTester2);
-        Display.run();
-        WaitForUserInput.run();
+        //Unit junTester2 = junFactory.createTester();
+        //university.addObject(coordsOfJunTester, junTester2);
+        //Display.run();
+        UserInput.waitForInput();
     }
 }

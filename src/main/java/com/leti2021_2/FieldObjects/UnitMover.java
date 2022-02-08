@@ -1,7 +1,7 @@
 package com.leti2021_2.FieldObjects;
 
 import com.leti2021_2.Coords;
-import com.leti2021_2.Display;
+import com.leti2021_2.GUI.Display;
 import com.leti2021_2.FieldObjects.LandscapeObjects.PassableLandscapeObject;
 import com.leti2021_2.FieldObjects.TemporaryObjectsStrategies.TemporaryObjectStrategySetter;
 import com.leti2021_2.FieldObjects.Units.Unit;
