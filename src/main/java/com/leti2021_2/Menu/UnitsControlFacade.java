@@ -17,7 +17,6 @@ public class UnitsControlFacade {
         if (unit == null)
             throw new IllegalArgumentException("The unit with the current coordinates does not exist.");
 
-        // переделать в try/catch
         boolean inputIsIncorrect = true;
         while (inputIsIncorrect) {
             System.out.println();
@@ -30,7 +29,7 @@ public class UnitsControlFacade {
             switch (input) {
                 case "1" -> {
                     inputIsIncorrect = false;
-                    loolAround(coords);
+                    lookAround(coords);
                 }
                 case "2" -> {
                     inputIsIncorrect = false;
@@ -42,8 +41,7 @@ public class UnitsControlFacade {
         }
     }
 
-    private static void loolAround(Coords coords) throws IOException {
-        // переделать в try/catch
+    private static void lookAround(Coords coords) throws IOException {
         boolean inputIsIncorrect = true;
         while (inputIsIncorrect) {
             System.out.println("Which direction you want to look? (u - up, l - left, d - down, r - right)");

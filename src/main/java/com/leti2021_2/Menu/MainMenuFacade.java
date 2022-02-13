@@ -36,7 +36,6 @@ public class MainMenuFacade {
                         Coords coords = Coords.parseCoords(coordsStr);
                         System.out.println("");
                         UnitsControlFacade.run(coords);
-                        // где какие ошибки ловим? Возможно можно оптимизировать, или оставить как есть.
                     }
                     catch (IllegalArgumentException e) {
                         inputIsIncorrect = true;
