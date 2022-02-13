@@ -3,6 +3,7 @@ package com.leti2021_2.GUI;
 import com.leti2021_2.Coords;
 import com.leti2021_2.FieldObjects.FieldObject;
 import com.leti2021_2.FieldObjects.TemporaryObjectsMap;
+import com.leti2021_2.FieldObjects.Units.Unit;
 import com.leti2021_2.FieldObjects.UniversitiesMap;
 import com.leti2021_2.FieldObjects.University;
 import com.leti2021_2.Main;
@@ -70,15 +71,12 @@ public class Display {
         System.out.println();
     }
 
-    private static FieldObject getObjectByPriority(Coords coords) {
+    public static FieldObject getObjectByPriority(Coords coords) {
         FieldObject result;
 
-
-        for (University university : UniversitiesMap.universities) {
-            result = university.getObject(coords);
-            if (university.getObject(coords) != null)
-                return result;
-        }
+        result = UniversitiesMap.unitSearch(coords);
+        if (result != null)
+            return result;
 
         result = TemporaryObjectsMap.getObject(coords);
         if (result != null)

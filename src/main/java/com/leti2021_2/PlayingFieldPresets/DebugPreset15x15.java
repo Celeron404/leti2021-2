@@ -14,6 +14,7 @@ import com.leti2021_2.FieldObjects.Units.Unit;
 import com.leti2021_2.GUI.Display;
 import com.leti2021_2.GUI.UserInput;
 import com.leti2021_2.FieldObjects.Generators.FloorGenerator;
+import com.leti2021_2.Menu.MainMenuFacade;
 
 import java.io.IOException;
 
@@ -66,6 +67,8 @@ public class DebugPreset15x15 {
 
 
     public static void run() throws IOException {
+        MainMenuFacade.run();
+
         var university = new University();
         UniversitiesMap.universities.add(university);
         PlayingField.replaceObject(new Coords(2, 5), university);
