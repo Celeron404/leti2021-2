@@ -39,7 +39,7 @@ public class MainMenuFacade {
                     }
                     catch (IllegalArgumentException e) {
                         inputIsIncorrect = true;
-                        System.out.println(e);
+                        e.printStackTrace();
                     }
                 }
                 default -> {

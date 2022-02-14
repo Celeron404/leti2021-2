@@ -9,8 +9,10 @@ import com.leti2021_2.PlayingField;
 
 public class UnitMover {
     public void move(Unit unit, Coords unitCoords, Direction direction, int numberOfSteps) {
+        if (numberOfSteps <= 0)
+            throw new IllegalArgumentException("Number of steps cannot be less or equal than 0");
 
-        Coords directionCoords = stepCoords(unitCoords, direction);
+        //Coords directionCoords = stepCoords(unitCoords, direction);
 
         for (int i = 0; i < numberOfSteps; i++) {
             boolean isStepComplete;
