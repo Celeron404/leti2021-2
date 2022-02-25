@@ -1,4 +1,4 @@
-package com.leti2021_2.Menu;
+package com.leti2021_2.Facade;
 
 import com.leti2021_2.GUI.Display;
 import com.leti2021_2.GUI.UserInput;
@@ -8,9 +8,7 @@ import com.leti2021_2.PlayingFieldPresets.DebugPreset15x15;
 import com.leti2021_2.PlayingFieldPresets.DemoPreset10x10;
 import com.leti2021_2.PlayingFieldPresets.DemoPreset15x15;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class ProgramInitialization {
     public static void run() throws IOException {

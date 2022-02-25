@@ -15,6 +15,11 @@ public class Coords {
         setY(y);
     }
 
+    public Coords(Coords coords) {
+        setX(coords.getX());
+        setY(coords.getY());
+    }
+
     public int getX() { return x; }
     public int getY() { return y; }
 
