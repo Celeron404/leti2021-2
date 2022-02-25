@@ -2,6 +2,7 @@ package com.leti2021_2.FieldObjects.Units;
 
 import com.leti2021_2.FieldObjects.FieldObject;
 import com.leti2021_2.FieldObjects.University;
+import com.leti2021_2.ObjectType;
 
 public abstract class Unit implements FieldObject {
     private boolean isAlive = true;
@@ -10,13 +11,16 @@ public abstract class Unit implements FieldObject {
     private boolean isNewSubject = true; // if University didn't check the Unit
     private University ownUniversity = null;
 
-    public Unit() {
-
-    }
+    public Unit() { }
 
     public String getDescription() { return DESCRIPTION; }
 
-    abstract public UnitType getType(); // ?
+    abstract public UnitType getUnitType();
+
+    @Override
+    public ObjectType getType() {
+        return ObjectType.UNIT;
+    }
 
     public double getHealth() { return health; }
 

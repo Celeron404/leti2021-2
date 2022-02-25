@@ -23,7 +23,7 @@ public class Beer extends TemporaryObject {
     }
 
     @Override
-    public TemporaryObjectType getType() {
+    public TemporaryObjectType getTemporaryObjectType() {
         return TemporaryObjectType.BEER;
     }
 

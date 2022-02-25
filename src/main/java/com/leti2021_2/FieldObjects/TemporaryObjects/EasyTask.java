@@ -24,7 +24,7 @@ public class EasyTask extends TemporaryObject {
     }
 
     @Override
-    public TemporaryObjectType getType() {
+    public TemporaryObjectType getTemporaryObjectType() {
         return TemporaryObjectType.EASYTASK;
     }
 
