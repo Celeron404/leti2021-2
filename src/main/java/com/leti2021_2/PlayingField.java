@@ -6,8 +6,6 @@ import com.leti2021_2.FieldObjects.Generators.WallGenerator;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.diogonunes.jcolor.Ansi.colorize;
-
 public class PlayingField {
     private static final int MAX_SIDE_SIZE = 40;
     private static int sideSize;
@@ -48,6 +46,14 @@ public class PlayingField {
                 return entry.getValue();
         }
         return null;
+    }
+
+    public static Coords getCoordsOfObject(FieldObject object) {
+        for (Map.Entry<Coords, FieldObject> entry : landscapeObjectsMap.entrySet()) {
+            if (entry.getValue() == object)
+                return entry.getKey();
+        }
+        throw new IllegalArgumentException("Error! Lanscape Objects Map not contains that object.");
     }
 
     public static void addObject(Coords coords, FieldObject object) {
