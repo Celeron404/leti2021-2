@@ -2,11 +2,11 @@ package com.leti2021_2.FieldObjects;
 
 import com.leti2021_2.Coords;
 import com.leti2021_2.FieldObjects.Units.Unit;
+import com.leti2021_2.ObjectType;
 import com.leti2021_2.Observer.Observer;
-import org.w3c.dom.ls.LSOutput;
+import com.leti2021_2.PlayingField;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 import static com.diogonunes.jcolor.Ansi.colorize;
@@ -16,8 +16,8 @@ import static com.diogonunes.jcolor.Attribute.BRIGHT_WHITE_TEXT;
 public class University implements FieldObject, Observer {
     static final String DESCRIPTION = "This is university. We make more workers!";
     boolean isPassable = false;
-    private double health = 200;
-    private final int maxUnits = 10; // max units under control (at the same time)
+    //private double health = 200;
+    public static final int maxUnits = 10; // max units under control (at the same time)
     private int numberOfUnits = 0;
     private Map<Coords, Unit> unitsMap = new HashMap<>();
 
@@ -30,6 +30,11 @@ public class University implements FieldObject, Observer {
     @Override
     public void display() {
         System.out.print(colorize("U", BRIGHT_WHITE_TEXT(), BLACK_BACK()));
+    }
+
+    @Override
+    public ObjectType getType() {
+        return ObjectType.UNIVERSITY;
     }
 
     @Override
@@ -59,6 +64,18 @@ public class University implements FieldObject, Observer {
         return null;
     }
 
+    public int getNumberOfUnits() {
+        return numberOfUnits;
+    }
+
+    public void createUnit(Unit unit) {
+        // in default situation, we create unit to the right of the University.
+        // If we need more flexibility, we can fix it here.
+        Coords coords = PlayingField.getCoordsOfObject(this);
+        coords.setX(coords.getX() + 1); // to the right of the University
+        addObject(coords, unit);
+    }
+
     public void addObject(Coords coords, Unit unit) {
         for (Map.Entry<Coords, Unit> entry : unitsMap.entrySet()) {
             if (Coords.isEqual(entry.getKey(), coords))
@@ -76,5 +93,26 @@ public class University implements FieldObject, Observer {
             }
         }
         throw new IllegalArgumentException("This university can not contain this Unit.");
+    }
+
+    // протестировать
+    public void printUnits() {
+        System.out.println("Units: " + getNumberOfUnits());
+
+        int programmers = 0, testers = 0, supportEngineers = 0;
+        for (Map.Entry<Coords, Unit> item : unitsMap.entrySet()) {
+            switch(item.getValue().getUnitType()) {
+                case TESTER -> testers++;
+                case PROGRAMMER -> programmers++;
+                case SUPPORTENGINEER -> supportEngineers++;
+            }
+        }
+
+        if (programmers > 0)
+            System.out.println("\tProgrammers: " + programmers);
+        if (testers > 0)
+            System.out.println("\tTesters: " + testers);
+        if (supportEngineers > 0)
+            System.out.println("\tSupport Engineers: " + supportEngineers);
     }
 }
