@@ -78,16 +78,16 @@ public class DemoPreset10x10 {
         university.addObject(coords, seniorProgrammer);
 
         var mover = new UnitMover();
-        mover.move(seniorProgrammer, coords, Direction.RIGHT, 6);
-        mover.move(seniorProgrammer, coords, Direction.DOWN, 2);
-        mover.move(seniorProgrammer, coords, Direction.LEFT, 4);
-        mover.move(seniorProgrammer, coords, Direction.DOWN, 1);
-        mover.move(seniorProgrammer, coords, Direction.LEFT, 1);
-        mover.move(seniorProgrammer, coords, Direction.DOWN, 1);
-        mover.move(seniorProgrammer, coords, Direction.LEFT, 1);
-        mover.move(seniorProgrammer, coords, Direction.DOWN, 3);
-        mover.move(seniorProgrammer, coords, Direction.RIGHT, 2);
-        mover.move(seniorProgrammer, coords, Direction.UP, 1);
+        mover.move(seniorProgrammer, coords, Direction.type.RIGHT, 6);
+        mover.move(seniorProgrammer, coords, Direction.type.DOWN, 2);
+        mover.move(seniorProgrammer, coords, Direction.type.LEFT, 4);
+        mover.move(seniorProgrammer, coords, Direction.type.DOWN, 1);
+        mover.move(seniorProgrammer, coords, Direction.type.LEFT, 1);
+        mover.move(seniorProgrammer, coords, Direction.type.DOWN, 1);
+        mover.move(seniorProgrammer, coords, Direction.type.LEFT, 1);
+        mover.move(seniorProgrammer, coords, Direction.type.DOWN, 3);
+        mover.move(seniorProgrammer, coords, Direction.type.RIGHT, 2);
+        mover.move(seniorProgrammer, coords, Direction.type.UP, 1);
         System.out.println("Unit coords: " + coords);
     }
 }

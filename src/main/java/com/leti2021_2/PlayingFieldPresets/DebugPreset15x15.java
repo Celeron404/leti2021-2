@@ -12,9 +12,9 @@ import com.leti2021_2.FieldObjects.TemporaryObjects.EasyTask;
 import com.leti2021_2.FieldObjects.TemporaryObjects.HardTask;
 import com.leti2021_2.FieldObjects.Units.Unit;
 import com.leti2021_2.GUI.Display;
+import com.leti2021_2.GUI.MainMenu;
 import com.leti2021_2.GUI.UserInput;
 import com.leti2021_2.FieldObjects.Generators.FloorGenerator;
-import com.leti2021_2.Menu.MainMenuFacade;
 
 import java.io.IOException;
 
@@ -67,7 +67,7 @@ public class DebugPreset15x15 {
 
 
     public static void run() throws IOException {
-        MainMenuFacade.run();
+        MainMenu.run();
 
         var university = new University();
         UniversitiesMap.universities.add(university);
@@ -90,20 +90,20 @@ public class DebugPreset15x15 {
         UserInput.waitForInput();
 
         var mover = new UnitMover();
-        mover.move(junTester, coordsOfJunTester, Direction.DOWN, 2);
+        mover.move(junTester, coordsOfJunTester, Direction.type.DOWN, 2);
         System.out.println("Unit stats: " + junTester.getHealth() + " hp, " + junTester.getStressTolerance() + " stressTolerance, " + junTester.getSkillLvl() + " skillLvl.");
         UserInput.waitForInput();
-        mover.move(junTester, coordsOfJunTester, Direction.LEFT, 1);
+        mover.move(junTester, coordsOfJunTester, Direction.type.LEFT, 1);
         System.out.println("Unit stats: " + junTester.getHealth() + " hp, " + junTester.getStressTolerance() + " stressTolerance, " + junTester.getSkillLvl() + " skillLvl.");
         UserInput.waitForInput();
-        mover.move(junTester, coordsOfJunTester, Direction.RIGHT, 1);
-        mover.move(junTester, coordsOfJunTester, Direction.DOWN, 1);
+        mover.move(junTester, coordsOfJunTester, Direction.type.RIGHT, 1);
+        mover.move(junTester, coordsOfJunTester, Direction.type.DOWN, 1);
         System.out.println("Unit stats: " + junTester.getHealth() + " hp, " + junTester.getStressTolerance() + " stressTolerance, " + junTester.getSkillLvl() + " skillLvl.");
         UserInput.waitForInput();
-        mover.move(junTester, coordsOfJunTester, Direction.DOWN, 1);
+        mover.move(junTester, coordsOfJunTester, Direction.type.DOWN, 1);
         System.out.println("Unit stats: " + junTester.getHealth() + " hp, " + junTester.getStressTolerance() + " stressTolerance, " + junTester.getSkillLvl() + " skillLvl.");
         UserInput.waitForInput();
-        mover.move(junTester, coordsOfJunTester, Direction.RIGHT, 1);
+        mover.move(junTester, coordsOfJunTester, Direction.type.RIGHT, 1);
         System.out.println("Unit stats: " + junTester.getHealth() + " hp, " + junTester.getStressTolerance() + " stressTolerance, " + junTester.getSkillLvl() + " skillLvl.");
         System.out.println("Unit coords: " + coordsOfJunTester);
         UserInput.waitForInput();

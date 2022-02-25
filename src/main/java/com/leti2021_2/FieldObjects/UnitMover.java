@@ -8,7 +8,7 @@ import com.leti2021_2.FieldObjects.Units.Unit;
 import com.leti2021_2.PlayingField;
 
 public class UnitMover {
-    public void move(Unit unit, Coords unitCoords, Direction direction, int numberOfSteps) {
+    public void move(Unit unit, Coords unitCoords, Direction.type direction, int numberOfSteps) {
         if (numberOfSteps <= 0)
             throw new IllegalArgumentException("Number of steps cannot be less or equal than 0");
 
@@ -25,12 +25,12 @@ public class UnitMover {
 
     // proxy
     interface DoStep {
-        boolean doStep(Unit unit, Coords unitCoords, Direction direction);
+        boolean doStep(Unit unit, Coords unitCoords, Direction.type direction);
     }
 
     class DoStepper implements DoStep {
         @Override
-        public boolean doStep(Unit unit, Coords unitCoords, Direction direction) {
+        public boolean doStep(Unit unit, Coords unitCoords, Direction.type direction) {
             Coords targetCoords = stepCoords(unitCoords, direction);
 
             unitCoords.setX(targetCoords.getX());
@@ -48,7 +48,7 @@ public class UnitMover {
 
     class DoStepperWithPossibilityChecking implements DoStep {
         @Override
-        public boolean doStep(Unit unit, Coords unitCoords, Direction direction) {
+        public boolean doStep(Unit unit, Coords unitCoords, Direction.type direction) {
             Coords targetCoords = stepCoords(unitCoords, direction);
 
             // debugging
@@ -69,7 +69,7 @@ public class UnitMover {
             }
             if (TemporaryObjectsMap.getObject(targetCoords) != null) {
                 TemporaryObject currentObject = (TemporaryObject) TemporaryObjectsMap.getObject(targetCoords);
-                new TemporaryObjectStrategySetter().set(unit.getType(), currentObject);
+                new TemporaryObjectStrategySetter().set(unit.getUnitType(), currentObject);
                 currentObject.interactWithUnit(unit);
                 TemporaryObjectsMap.removeObject(targetCoords);
             }
@@ -79,7 +79,7 @@ public class UnitMover {
     }
 
 
-    private Coords stepCoords(Coords currentCoords, Direction direction) {
+    private Coords stepCoords(Coords currentCoords, Direction.type direction) {
         var targetCoords = new Coords(currentCoords.getX(), currentCoords.getY());
         switch (direction) {
             case UP:

@@ -96,14 +96,14 @@ public class DemoPreset15x15 {
         university.addObject(coords, juniorTester);
 
         var mover = new UnitMover();
-        mover.move(juniorTester, coords, Direction.DOWN, 3);
+        mover.move(juniorTester, coords, Direction.type.DOWN, 3);
         UserInput.waitForInput();
-        mover.move(juniorTester, coords, Direction.RIGHT, 3);
-        mover.move(juniorTester, coords, Direction.UP, 4);
-        mover.move(juniorTester, coords, Direction.RIGHT, 4);
-        mover.move(juniorTester, coords, Direction.UP, 3);
-        mover.move(juniorTester, coords, Direction.RIGHT, 2);
-        mover.move(juniorTester, coords, Direction.UP, 5);
+        mover.move(juniorTester, coords, Direction.type.RIGHT, 3);
+        mover.move(juniorTester, coords, Direction.type.UP, 4);
+        mover.move(juniorTester, coords, Direction.type.RIGHT, 4);
+        mover.move(juniorTester, coords, Direction.type.UP, 3);
+        mover.move(juniorTester, coords, Direction.type.RIGHT, 2);
+        mover.move(juniorTester, coords, Direction.type.UP, 5);
         System.out.println("Unit coords: " + coords);
     }
 }
