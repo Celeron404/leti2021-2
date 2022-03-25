@@ -15,24 +15,25 @@ public class ProgramInitialization {
         String presetChoise = null;
         boolean inputIsCorrect = false;
         while (!inputIsCorrect) {
-            System.out.println("1) DebugPreset 15x15");
+            System.out.println("1) DemoPreset 10x10");
             System.out.println("2) DemoPreset 15x15");
-            System.out.println("3) DemoPreset 10x10");
+            if (Main.DEBUG)
+                System.out.println("9) DebugPreset 15x15");
             System.out.println("Choose the preset:");
             presetChoise = UserInput.getString();
 
             switch (presetChoise) {
                 case "1" -> {
                     inputIsCorrect = true;
-                    DebugPreset15x15.fill();
+                    DemoPreset15x15.fill();
                 }
                 case "2" -> {
                     inputIsCorrect = true;
-                    DemoPreset15x15.fill();
-                }
-                case "3" -> {
-                    inputIsCorrect = true;
                     DemoPreset10x10.fill();
+                }
+                case "9" -> {
+                    inputIsCorrect = true;
+                    DebugPreset15x15.fill();
                 }
             }
         }
@@ -61,15 +62,15 @@ public class ProgramInitialization {
             switch (presetChoise) {
                 case "1" -> {
                     inputIsCorrect = true;
-                    DebugPreset15x15.run();
+                    DemoPreset10x10.run();
                 }
                 case "2" -> {
                     inputIsCorrect = true;
                     DemoPreset15x15.run();
                 }
-                case "3" -> {
+                case "9" -> {
                     inputIsCorrect = true;
-                    DemoPreset10x10.run();
+                    DebugPreset15x15.run();
                 }
             }
         }
