@@ -22,6 +22,7 @@ public class Display {
         // instead of console clear
         for (int i = 0; i < 50; i++) { System.out.println(); }
 
+        /*
         if (!Main.DEBUG) {
             for (int y = PlayingField.getSideSize() - 1; y >= 0; y--) {
                 for (int x = 0; x < PlayingField.getSideSize(); x++) {
@@ -41,6 +42,8 @@ public class Display {
 
         // FOR DEBUG MODE (PlayingField coordinates display)
         else {
+
+         */
             drawDebugColumns();
 
             for (int y = PlayingField.getSideSize() - 1; y >= 0; y--) {
@@ -63,7 +66,7 @@ public class Display {
             }
 
             drawDebugColumns();
-        }
+        //}
 
 
 
