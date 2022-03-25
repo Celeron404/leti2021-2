@@ -1,16 +1,14 @@
 package com.leti2021_2.GUI;
 
-import com.leti2021_2.Coords;
-import com.leti2021_2.Facade.UnitsControlFacade;
-import com.leti2021_2.FieldObjects.Units.Unit;
-import com.leti2021_2.FieldObjects.UniversitiesMap;
+import com.leti2021_2.GUI.Facade.UnitMenuFacade;
+import com.leti2021_2.UserData;
 
 import java.io.IOException;
 
-public class UnitsControlMenu {
+public class UnitsMenu {
 
     public static void run() throws IOException {
-        Coords coords = null;
+        UserData userData = new UserData();
         boolean inputIsIncorrect = true;
         while (inputIsIncorrect) {
             try {
@@ -18,7 +16,7 @@ public class UnitsControlMenu {
                 System.out.print(">> ");
                 String coordsStr = UserInput.getString();
                 System.out.println();
-                coords = UnitsControlFacade.parseCoords(coordsStr);
+                userData.unitCoords = UnitMenuFacade.parseCoords(coordsStr);
                 System.out.println();
                 inputIsIncorrect = false;
             } catch (IllegalArgumentException e) {
@@ -26,9 +24,7 @@ public class UnitsControlMenu {
             }
         }
 
-        Unit unit = UnitsControlFacade.unitSearch(coords);
-        if (unit == null)
-            throw new IllegalArgumentException("The unit with the current coordinates does not exist.");
+        UnitMenuFacade.unitSearch(userData);
 
         inputIsIncorrect = true;
         while (inputIsIncorrect) {
@@ -43,15 +39,15 @@ public class UnitsControlMenu {
             switch (input) {
                 case "1" -> {
                     inputIsIncorrect = false;
-                    UnitsControlFacade.lookAround(coords);
+                    UnitMenuFacade.lookAt(userData);
                 }
                 case "2" -> {
                     inputIsIncorrect = false;
-                    UnitsControlFacade.move(coords, unit);
+                    UnitMenuFacade.move(userData);
                 }
                 case "3" -> {
                     inputIsIncorrect = false;
-                    UnitsControlFacade.printStatus(unit);
+                    UnitMenuFacade.printStatus(userData);
                 }
                 default -> {
                 }

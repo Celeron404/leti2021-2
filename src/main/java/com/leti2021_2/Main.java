@@ -1,6 +1,6 @@
 package com.leti2021_2;
 
-import com.leti2021_2.Facade.ProgramInitialization;
+import com.leti2021_2.GUI.Facade.ProgramInitialization;
 
 import java.io.IOException;
 

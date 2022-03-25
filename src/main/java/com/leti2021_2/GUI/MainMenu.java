@@ -1,8 +1,5 @@
 package com.leti2021_2.GUI;
 
-import com.leti2021_2.Facade.UnitsControlFacade;
-import com.leti2021_2.Facade.UniversityMenuFacade;
-
 import java.io.IOException;
 
 public class MainMenu {
@@ -24,7 +21,7 @@ public class MainMenu {
                 case "2" -> {
                     inputIsIncorrect = false;
                     try {
-                        UnitsControlMenu.run();
+                        UnitsMenu.run();
                     }
                     catch (IllegalArgumentException e) {
                         inputIsIncorrect = true;

@@ -1,4 +1,4 @@
-package com.leti2021_2.Facade;
+package com.leti2021_2.GUI.Facade;
 
 import com.leti2021_2.GUI.Display;
 import com.leti2021_2.GUI.UserInput;

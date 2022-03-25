@@ -16,10 +16,10 @@ import static com.diogonunes.jcolor.Attribute.BRIGHT_WHITE_TEXT;
 public class University implements FieldObject, Observer {
     static final String DESCRIPTION = "This is university. We make more workers!";
     boolean isPassable = false;
-    //private double health = 200;
+    private int health = 200;
     public static final int maxUnits = 10; // max units under control (at the same time)
     private int numberOfUnits = 0;
-    private Map<Coords, Unit> unitsMap = new HashMap<>();
+    private final Map<Coords, Unit> unitsMap = new HashMap<>();
 
     @Override
     public String getDescription() { return DESCRIPTION; }
@@ -52,7 +52,7 @@ public class University implements FieldObject, Observer {
                 removeObject(unit);
                 numberOfUnits--;
             } else
-                throw new ArrayIndexOutOfBoundsException("Unit's number cannot be less than zero!");
+                throw new IllegalArgumentException("Unit's number cannot be less than zero!");
         }
     }
 
@@ -69,6 +69,8 @@ public class University implements FieldObject, Observer {
     }
 
     public void createUnit(Unit unit) {
+        this.setHealth(health - 10);
+
         // in default situation, we create unit to the right of the University.
         // If we need more flexibility, we can fix it here.
         Coords coords = PlayingField.getCoordsOfObject(this);
@@ -115,4 +117,12 @@ public class University implements FieldObject, Observer {
         if (supportEngineers > 0)
             System.out.println("\tSupport Engineers: " + supportEngineers);
     }
+
+    public void setHealth(int health) {
+        if (health <= 0)
+            throw new IllegalArgumentException("The strength of the university is less than possible. Improving Units, you can increase it.");
+        else this.health = health;
+    }
+
+    public int getHealth() { return health; }
 }

@@ -1,9 +1,8 @@
 package com.leti2021_2.GUI;
 
 import com.leti2021_2.Coords;
-import com.leti2021_2.Facade.UniversityMenuFacade;
-import com.leti2021_2.FieldObjects.UniversitiesMap;
-import com.leti2021_2.FieldObjects.University;
+import com.leti2021_2.GUI.Facade.UniversityMenuFacade;
+import com.leti2021_2.UserData;
 
 import java.io.IOException;
 
@@ -11,13 +10,13 @@ import static com.leti2021_2.FieldObjects.Units.UnitType.*;
 
 public class UniversityMenu {
     public static void run() throws IOException {
-        University university;
+        UserData userData = new UserData();
         boolean inputIsIncorrect = true;
         while (inputIsIncorrect) {
             // while we have the only one university
             // If we need add another, we can remake this part, adding new dialog
             Coords coords = new Coords(1, 1);
-            university = UniversityMenuFacade.getUniversity(coords);
+            userData.currentUniversity = UniversityMenuFacade.getUniversity(coords);
             System.out.println();
             System.out.println("University's actions:");
             System.out.println("1) Unit's create");
@@ -30,15 +29,15 @@ public class UniversityMenu {
             switch (input) {
                 case "1" -> {
                     inputIsIncorrect = false;
-                    createUnit(university);
+                    createUnit(userData);
                 }
                 case "2" -> {
                     inputIsIncorrect = false;
-                    UniversityMenuFacade.printUnits(university);
+                    UniversityMenuFacade.printUnits(userData);
                 }
                 case "3" -> {
                     inputIsIncorrect = false;
-                    UniversityMenuFacade.printStatus(university);
+                    UniversityMenuFacade.printStatus(userData);
                 }
                 default -> {
                 }
@@ -46,8 +45,8 @@ public class UniversityMenu {
         }
     }
 
-    private static void createUnit(University university) throws IOException {
-        if (!UniversityMenuFacade.universityNotFull(university))
+    private static void createUnit(UserData userData) throws IOException {
+        if (!UniversityMenuFacade.universityNotFull(userData.currentUniversity))
             throw new IllegalStateException("Error! University is full.");
 
         boolean inputIsIncorrect = true;
@@ -69,15 +68,18 @@ public class UniversityMenu {
             switch (userTypeInt) {
                 case 1 -> {
                     inputIsIncorrect = false;
-                    UniversityMenuFacade.createUnit(university, PROGRAMMER);
+                    userData.newUnitType = PROGRAMMER;
+                    UniversityMenuFacade.createUnit(userData);
                 }
                 case 2 -> {
                     inputIsIncorrect = false;
-                    UniversityMenuFacade.createUnit(university, TESTER);
+                    userData.newUnitType = TESTER;
+                    UniversityMenuFacade.createUnit(userData);
                 }
                 case 3 -> {
                     inputIsIncorrect = false;
-                    UniversityMenuFacade.createUnit(university, SUPPORTENGINEER);
+                    userData.newUnitType = SUPPORTENGINEER;
+                    UniversityMenuFacade.createUnit(userData);
                 }
                 default ->
                     System.out.println("Error! Invalid input.");
