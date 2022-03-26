@@ -8,6 +8,7 @@ import com.leti2021_2.Coords;
 import com.leti2021_2.FieldObjects.Direction;
 import com.leti2021_2.FieldObjects.FieldObject;
 import com.leti2021_2.GUI.UserInput;
+import com.leti2021_2.Main;
 import com.leti2021_2.UserData;
 
 import java.io.IOException;
@@ -33,6 +34,7 @@ public class UnitMenuFacade {
             System.out.print(">> ");
             try {
                 String directionStr = UserInput.getString();
+                System.out.println();
                 Coords displayCoords = new Coords(userData.unitCoords);
                 FieldObject object = null;
                 userData.lookDirection = Direction.parseDirection(directionStr);
@@ -42,7 +44,11 @@ public class UnitMenuFacade {
                 inputIsIncorrect = false;
             }
             catch (IllegalArgumentException e) {
-               e.printStackTrace();
+                if (Main.DEBUG) {
+                    e.printStackTrace();
+                }
+                else System.out.println(e);
+                System.out.println();
                break;
             }
         }
@@ -54,18 +60,24 @@ public class UnitMenuFacade {
             System.out.println("Which direction you want to move? (u - up, l - left, d - down, r - right)");
             System.out.print(">> ");
             String directionStr = UserInput.getString();
+            System.out.println();
             try {
                 userData.moveDirection = Direction.parseDirection(directionStr);
                 System.out.println("How much steps you want to do?");
                 System.out.print(">> ");
                 userData.stepsToMove = Integer.parseInt(UserInput.getString());
+                System.out.println();
 
                 invoker.setCommand(new Move(userData));
                 invoker.executeCommand();
                 inputIsIncorrect = false;
             }
             catch (IllegalArgumentException e) {
-                e.printStackTrace();
+                if (Main.DEBUG) {
+                    e.printStackTrace();
+                }
+                else System.out.println(e);
+                System.out.println();
             }
         }
     }

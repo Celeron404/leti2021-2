@@ -4,6 +4,8 @@ import com.leti2021_2.FieldObjects.FieldObject;
 import com.leti2021_2.FieldObjects.University;
 import com.leti2021_2.ObjectType;
 
+import java.io.IOException;
+
 public abstract class Unit implements FieldObject {
     private boolean isAlive = true;
     private double health, stressTolerance = 1, skillLvl = 15;
@@ -27,6 +29,8 @@ public abstract class Unit implements FieldObject {
     public double getStressTolerance() { return stressTolerance; }
 
     public double getSkillLvl() { return skillLvl; }
+
+    public University getOwnUniversity() { return ownUniversity; }
 
     public void setDESCRIPTION(String input) {
         if (input != null) DESCRIPTION = input;

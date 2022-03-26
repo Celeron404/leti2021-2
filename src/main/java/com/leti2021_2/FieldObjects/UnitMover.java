@@ -5,14 +5,13 @@ import com.leti2021_2.GUI.Display;
 import com.leti2021_2.FieldObjects.LandscapeObjects.PassableLandscapeObject;
 import com.leti2021_2.FieldObjects.TemporaryObjectsStrategies.TemporaryObjectStrategySetter;
 import com.leti2021_2.FieldObjects.Units.Unit;
+import com.leti2021_2.Main;
 import com.leti2021_2.PlayingField;
 
 public class UnitMover {
     public void move(Unit unit, Coords unitCoords, Direction.type direction, int numberOfSteps) {
         if (numberOfSteps <= 0)
             throw new IllegalArgumentException("Number of steps cannot be less or equal than 0");
-
-        //Coords directionCoords = stepCoords(unitCoords, direction);
 
         for (int i = 0; i < numberOfSteps; i++) {
             boolean isStepComplete;
@@ -40,7 +39,11 @@ public class UnitMover {
             try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                if (Main.DEBUG) {
+                    e.printStackTrace();
+                }
+                else System.out.println(e);
+                System.out.println();
             }
             return true;
         }
@@ -51,7 +54,6 @@ public class UnitMover {
         public boolean doStep(Unit unit, Coords unitCoords, Direction.type direction) {
             Coords targetCoords = stepCoords(unitCoords, direction);
 
-            // debugging
             FieldObject v = PlayingField.getObject(targetCoords);
             boolean v1 = v.isPassable();
             if (PlayingField.getObject(targetCoords).isPassable()) {
@@ -61,10 +63,15 @@ public class UnitMover {
                 try {
                     Thread.sleep(500 * p - 500);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    if (Main.DEBUG) {
+                        e.printStackTrace();
+                    }
+                    else System.out.println(e);
+                    System.out.println();
                 }
             } else {
                 System.out.println(PlayingField.getObject(targetCoords).getDescription());
+                System.out.println();
                 return false;
             }
             if (TemporaryObjectsMap.getObject(targetCoords) != null) {
@@ -82,18 +89,22 @@ public class UnitMover {
     private Coords stepCoords(Coords currentCoords, Direction.type direction) {
         var targetCoords = new Coords(currentCoords.getX(), currentCoords.getY());
         switch (direction) {
-            case UP:
+            case UP -> {
                 targetCoords.setY(currentCoords.getY() + 1);
                 return targetCoords;
-            case DOWN:
+            }
+            case DOWN -> {
                 targetCoords.setY(currentCoords.getY() - 1);
                 return targetCoords;
-            case LEFT:
+            }
+            case LEFT -> {
                 targetCoords.setX(currentCoords.getX() - 1);
                 return targetCoords;
-            case RIGHT:
+            }
+            case RIGHT -> {
                 targetCoords.setX(currentCoords.getX() + 1);
                 return targetCoords;
+            }
         }
         return null;
     }

@@ -17,6 +17,8 @@ import com.leti2021_2.GUI.UserInput;
 import com.leti2021_2.FieldObjects.Generators.FloorGenerator;
 
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static com.leti2021_2.FieldObjects.Factories.Unit.UnitFactoryMaker.FactoryMaker.UnitQualification.JUNIOR;
 
@@ -67,12 +69,15 @@ public class DebugPreset15x15 {
 
 
     public static void run() throws IOException {
-        MainMenu.run();
 
         var university = new University();
         UniversitiesMap.universities.add(university);
         PlayingField.replaceObject(new Coords(2, 5), university);
 
+        String testStr = UserInput.getString();
+        Coords testCrds = parseCoords(testStr);
+
+        /*
         var junFactory = UnitFactoryMaker.FactoryMaker.makeFactory(JUNIOR);
         Unit junTester = junFactory.createTester();
         var coordsOfJunTester = new Coords(2, 4);
@@ -119,5 +124,32 @@ public class DebugPreset15x15 {
         //university.addObject(coordsOfJunTester, junTester2);
         //Display.run();
         UserInput.waitForInput();
+        */
+    }
+
+    public static Coords parseCoords(String input) throws IOException {
+        Pattern regexPattern = Pattern.compile("^\\d+"); // (^\d+,\d+$)|(^\d+ \d+$) - pair of numbers with separator " " or ",", for example: 13 14 or 0,25
+        Matcher regexMatcher = regexPattern.matcher(input);
+        //boolean matchFound = regexMatcher.find();
+        if (!regexMatcher.find())
+            throw new IllegalArgumentException("Error! Coordinates only can be pair of number with separator \" \" or \",\", for example\"13 14\" or \"0,25\"");
+        // if input is correct then parse
+        String xStr = input.substring(regexMatcher.start(), regexMatcher.end());
+        System.out.println(xStr);
+        UserInput.waitForInput();
+
+        regexPattern = Pattern.compile("^\\d+"); // ^\d+ - first number
+        regexMatcher = regexPattern.matcher(input);
+        if (!regexMatcher.find())
+            throw new IllegalArgumentException("Error! Coordinates only can be pair of number with separator \" \" or \",\", for example\"13 14\" or \"0,25\"");
+        xStr = input.substring(regexMatcher.start(), regexMatcher.end());
+        int x = Integer.parseInt(xStr);
+
+        regexPattern = Pattern.compile("^\\d+$"); // \d+$ - second number
+        regexMatcher = regexPattern.matcher(input);
+        String yStr = input.substring(regexMatcher.start(), regexMatcher.end());
+        int y = Integer.parseInt(xStr);
+
+        return new Coords(x, y);
     }
 }

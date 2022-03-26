@@ -10,7 +10,6 @@ public class PrintStatus extends Command {
     }
 
     public void execute() {
-        System.out.println();
         System.out.println("Unit's description: " + userData.currentUnit.getDescription());
         System.out.println("Unit's health: " + userData.currentUnit.getHealth() +
                 ", stress tolerance: " + userData.currentUnit.getStressTolerance() +

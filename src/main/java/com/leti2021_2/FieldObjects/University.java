@@ -2,10 +2,12 @@ package com.leti2021_2.FieldObjects;
 
 import com.leti2021_2.Coords;
 import com.leti2021_2.FieldObjects.Units.Unit;
+import com.leti2021_2.GUI.UserInput;
 import com.leti2021_2.ObjectType;
 import com.leti2021_2.Observer.Observer;
 import com.leti2021_2.PlayingField;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -54,12 +56,21 @@ public class University implements FieldObject, Observer {
             } else
                 throw new IllegalArgumentException("Unit's number cannot be less than zero!");
         }
+
     }
 
     public Unit getObject(Coords coords) {
         for (Map.Entry<Coords, Unit> entry : unitsMap.entrySet()) {
             if (Coords.isEqual(entry.getKey(), coords))
                 return entry.getValue();
+        }
+        return null;
+    }
+
+    public Coords getObject(Unit unit) {
+        for (Map.Entry<Coords, Unit> entry : unitsMap.entrySet()) {
+            if (entry.getValue() == unit)
+                return entry.getKey();
         }
         return null;
     }
@@ -73,7 +84,7 @@ public class University implements FieldObject, Observer {
 
         // in default situation, we create unit to the right of the University.
         // If we need more flexibility, we can fix it here.
-        Coords coords = PlayingField.getCoordsOfObject(this);
+        Coords coords = new Coords(PlayingField.getCoordsOfObject(this));
         coords.setX(coords.getX() + 1); // to the right of the University
         addObject(coords, unit);
     }
@@ -97,7 +108,6 @@ public class University implements FieldObject, Observer {
         throw new IllegalArgumentException("This university can not contain this Unit.");
     }
 
-    // протестировать
     public void printUnits() {
         System.out.println("Units: " + getNumberOfUnits());
 
@@ -116,6 +126,7 @@ public class University implements FieldObject, Observer {
             System.out.println("\tTesters: " + testers);
         if (supportEngineers > 0)
             System.out.println("\tSupport Engineers: " + supportEngineers);
+        System.out.println();
     }
 
     public void setHealth(int health) {

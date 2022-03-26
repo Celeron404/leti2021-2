@@ -22,5 +22,6 @@ public class LookAt extends Command {
         }
         FieldObject object = Display.getObjectByPriority(displayCoords);
         System.out.println(object.getDescription());
+        System.out.println();
     }
 }

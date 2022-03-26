@@ -15,5 +15,6 @@ public class PrintStatus extends Command {
         System.out.println("University's health: " + university.getHealth());
         System.out.println("Number of units: " + university.getNumberOfUnits());
         System.out.println("Maximum possible number of units: " + University.maxUnits);
+        System.out.println();
     }
 }

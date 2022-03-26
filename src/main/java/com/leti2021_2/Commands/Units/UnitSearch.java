@@ -14,5 +14,7 @@ public class UnitSearch extends Command {
         userData.currentUnit = UniversitiesMap.unitSearch(userData.unitCoords);
         if (userData.currentUnit == null)
             throw new IllegalArgumentException("The unit with the current coordinates does not exist.");
+        userData.currentUniversity = userData.currentUnit.getOwnUniversity();
+        userData.unitCoords = userData.currentUniversity.getObject(userData.currentUnit);
     }
 }

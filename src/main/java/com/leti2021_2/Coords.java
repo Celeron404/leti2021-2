@@ -45,15 +45,19 @@ public class Coords {
             throw new IllegalArgumentException("Error! Coordinates only can be pair of number with separator \" \" or \",\", for example\"13 14\" or \"0,25\"");
         // if input is correct then parse
 
-        regexPattern = Pattern.compile("^\\d+"); // ^\d+ - first number
-        regexMatcher = regexPattern.matcher(input);
-        String xStr = input.substring(regexMatcher.start(), regexMatcher.end());
+        Pattern firstNumberPattern = Pattern.compile("(^\\d+)"); // ^\d+ - first number
+        Matcher firstNumberMatcher = firstNumberPattern.matcher(input);
+        if (!firstNumberMatcher.find())
+            throw new IllegalArgumentException("Error! Coordinates only can be pair of number with separator \" \" or \",\", for example\"13 14\" or \"0,25\"");
+        String xStr = input.substring(firstNumberMatcher.start(), firstNumberMatcher.end());
         int x = Integer.parseInt(xStr);
 
-        regexPattern = Pattern.compile("^\\d+$"); // \d+$ - second number
-        regexMatcher = regexPattern.matcher(input);
-        String yStr = input.substring(regexMatcher.start(), regexMatcher.end());
-        int y = Integer.parseInt(xStr);
+        Pattern secondNumberPattern = Pattern.compile("(\\d+$)"); // \d+$ - second number
+        Matcher secondNumberMatcher = secondNumberPattern.matcher(input);
+        if (!secondNumberMatcher.find())
+            throw new IllegalArgumentException("Error! Coordinates only can be pair of number with separator \" \" or \",\", for example\"13 14\" or \"0,25\"");
+        String yStr = input.substring(secondNumberMatcher.start(), secondNumberMatcher.end());
+        int y = Integer.parseInt(yStr);
 
         return new Coords(x, y);
     }

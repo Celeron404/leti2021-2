@@ -1,6 +1,7 @@
 package com.leti2021_2.GUI.Facade;
 
 import com.leti2021_2.GUI.Display;
+import com.leti2021_2.GUI.MainMenu;
 import com.leti2021_2.GUI.UserInput;
 import com.leti2021_2.Main;
 import com.leti2021_2.MapFillingChecker;
@@ -17,19 +18,18 @@ public class ProgramInitialization {
         while (!inputIsCorrect) {
             System.out.println("1) DemoPreset 10x10");
             System.out.println("2) DemoPreset 15x15");
-            if (Main.DEBUG)
-                System.out.println("9) DebugPreset 15x15");
+            System.out.println("9) DebugPreset 15x15");
             System.out.println("Choose the preset:");
             presetChoise = UserInput.getString();
 
             switch (presetChoise) {
                 case "1" -> {
                     inputIsCorrect = true;
-                    DemoPreset15x15.fill();
+                    DemoPreset10x10.fill();
                 }
                 case "2" -> {
                     inputIsCorrect = true;
-                    DemoPreset10x10.fill();
+                    DemoPreset15x15.fill();
                 }
                 case "9" -> {
                     inputIsCorrect = true;
@@ -55,6 +55,7 @@ public class ProgramInitialization {
                 }
             }
         }
+
         Display.run();
 
         inputIsCorrect = false;
@@ -74,6 +75,7 @@ public class ProgramInitialization {
                 }
             }
         }
+        MainMenu.run();
         UserInput.waitForInput();
     }
 }

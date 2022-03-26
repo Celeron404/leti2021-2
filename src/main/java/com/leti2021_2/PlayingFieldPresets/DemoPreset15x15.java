@@ -86,6 +86,7 @@ public class DemoPreset15x15 {
     }
 
     public static void run() throws IOException {
+        /*
         var university = new University();
         UniversitiesMap.universities.add(university);
         PlayingField.replaceObject(new Coords(2, 2), university);
@@ -105,5 +106,7 @@ public class DemoPreset15x15 {
         mover.move(juniorTester, coords, Direction.type.RIGHT, 2);
         mover.move(juniorTester, coords, Direction.type.UP, 5);
         System.out.println("Unit coords: " + coords);
+
+         */
     }
 }
