@@ -47,11 +47,6 @@ public class Display {
             drawDebugColumns();
 
             for (int y = PlayingField.getSideSize() - 1; y >= 0; y--) {
-                // for debug
-                if (y == 2) {
-                    Boolean test = true;
-                }
-
                 drawDebugRow(y);
 
                 for (int x = 0; x < PlayingField.getSideSize(); x++) {

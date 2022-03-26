@@ -57,6 +57,10 @@ public class DemoPreset10x10 {
         PlayingField.addObject(new Coords(8, 8), new Junk());
         PlayingField.addObject(new Coords(7, 8), new Junk());
 
+        var university = new University();
+        UniversitiesMap.universities.add(university);
+        PlayingField.addObject(new Coords(2, 8), university);
+
         var floorGenerator = new FloorGenerator();
         floorGenerator.generateFieldObjects();
 
@@ -64,30 +68,8 @@ public class DemoPreset10x10 {
         TemporaryObjectsMap.addObject(new Coords(6, 1), new Beer());
         TemporaryObjectsMap.addObject(new Coords(8, 8), new HardTask());
         TemporaryObjectsMap.addObject(new Coords(4, 2), new EasyTask());
-
     }
 
     public static void run() {
-        var university = new University();
-        UniversitiesMap.universities.add(university);
-        PlayingField.replaceObject(new Coords(2, 8), university);
-
-        var seniorFactory = new SeniorUnitAbstractFactory();
-        var seniorProgrammer = seniorFactory.createProgrammer();
-        var coords = new Coords(3, 8);
-        university.addObject(coords, seniorProgrammer);
-
-        var mover = new UnitMover();
-        mover.move(seniorProgrammer, coords, Direction.type.RIGHT, 6);
-        mover.move(seniorProgrammer, coords, Direction.type.DOWN, 2);
-        mover.move(seniorProgrammer, coords, Direction.type.LEFT, 4);
-        mover.move(seniorProgrammer, coords, Direction.type.DOWN, 1);
-        mover.move(seniorProgrammer, coords, Direction.type.LEFT, 1);
-        mover.move(seniorProgrammer, coords, Direction.type.DOWN, 1);
-        mover.move(seniorProgrammer, coords, Direction.type.LEFT, 1);
-        mover.move(seniorProgrammer, coords, Direction.type.DOWN, 3);
-        mover.move(seniorProgrammer, coords, Direction.type.RIGHT, 2);
-        mover.move(seniorProgrammer, coords, Direction.type.UP, 1);
-        System.out.println("Unit coords: " + coords);
     }
 }
